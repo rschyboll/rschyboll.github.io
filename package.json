@@ -1,0 +1,15 @@
+{
+  "homepage": "http://rschyboll.github.io/",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "gh-pages": "^4.0.0",
+    "parcel": "^2.6.0",
+    "prettier": "^2.6.2"
+  },
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  }
+}
