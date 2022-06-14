@@ -1,13 +1,23 @@
 {
   "homepage": "http://rschyboll.github.io/",
   "devDependencies": {
+    "@parcel/transformer-sass": "2.6.0",
+    "@parcel/validator-typescript": "^2.6.0",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
     "eslint": "^8.17.0",
     "gh-pages": "^4.0.0",
     "parcel": "^2.6.0",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "process": "^0.11.10",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "scripts": {
-    "start": "parcel ./src/index.html",
+    "watch": "parcel ./src/index.html",
     "build": "parcel build --dist-dir ./build ./src/index.html",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
