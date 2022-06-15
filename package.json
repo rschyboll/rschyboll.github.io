@@ -10,16 +10,22 @@
     "parcel": "^2.6.0",
     "prettier": "^2.6.2",
     "process": "^0.11.10",
+    "sharp": "^0.29.1",
     "typescript": "^4.7.3"
   },
   "dependencies": {
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "remixicon": "^2.5.0"
   },
   "scripts": {
     "watch": "parcel ./src/index.html",
     "build": "parcel build --dist-dir ./build ./src/index.html",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
+  },
+  "alias": {
+    "@/*": "./src/$1"
   }
 }
