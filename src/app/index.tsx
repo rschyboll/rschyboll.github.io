@@ -1,7 +1,10 @@
-import { SkillsPage } from "@/pages/skills";
-import { FC } from "react";
+import { FC } from 'react';
 
-import "./style.scss";
+import ExperiencePage from '@/pages/experience';
+import FooterPage from '@/pages/footer';
+import SkillsPage from '@/pages/skills';
+
+import './style.scss';
 
 export const App: FC = () => {
   return (
@@ -12,6 +15,12 @@ export const App: FC = () => {
       <section id="layout-skills-page">
         <SkillsPage />
       </section>
+      <section id="layout-experience-page">
+        <ExperiencePage />
+      </section>
+      <footer id="layout-footer-page">
+        <FooterPage />
+      </footer>
     </div>
   );
 };

@@ -1,23 +1,36 @@
 {
   "homepage": "http://rschyboll.github.io/",
   "devDependencies": {
-    "@parcel/transformer-sass": "2.6.0",
-    "@parcel/validator-typescript": "^2.6.0",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "eslint": "^8.17.0",
+    "@parcel/transformer-sass": "^2.6.2",
+    "@parcel/validator-typescript": "^2.6.2",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-vertical-timeline-component": "^3.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^4.0.0",
-    "parcel": "^2.6.0",
-    "prettier": "^2.6.2",
+    "parcel": "^2.6.2",
+    "prettier": "^2.7.1",
     "process": "^0.11.10",
     "sharp": "^0.29.1",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.4",
+    "yarn-upgrade-all": "^0.7.1"
   },
   "dependencies": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "@fontsource/lato": "^4.5.8",
+    "i18next": "^21.8.14",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.1",
     "react-icons": "^4.4.0",
-    "remixicon": "^2.5.0"
+    "react-vertical-timeline-component": "^3.5.2"
   },
   "scripts": {
     "watch": "parcel ./src/index.html",
@@ -27,5 +40,24 @@
   },
   "alias": {
     "@/*": "./src/$1"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "semi": true,
+    "importOrder": [
+      "<THIRD_PARTY_MODULES>",
+      "^@/(.*)$",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderParserPlugins": [
+      "typescript",
+      "jsx",
+      "decorators-legacy"
+    ]
   }
 }

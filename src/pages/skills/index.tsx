@@ -1,27 +1,26 @@
-import { FC } from "react";
-import { RiReactjsFill } from "react-icons/ri";
+import { FC, memo } from 'react';
+import { IconType } from 'react-icons';
+import { GiTortoise } from 'react-icons/gi';
+import { RiReactjsFill } from 'react-icons/ri';
 import {
-  SiTypescript,
-  SiRedux,
-  SiReduxsaga,
-  SiFlutter,
   SiDart,
   SiFastapi,
-  SiPython,
+  SiFlutter,
   SiPostgresql,
-} from "react-icons/si";
-import { GiTortoise } from "react-icons/gi";
+  SiPython,
+  SiRedux,
+  SiReduxsaga,
+  SiTypescript,
+} from 'react-icons/si';
 
-import { IconType } from "react-icons";
-
-import "./styles.scss";
+import './style.scss';
 
 const imageUrl = new URL(
-  "../../assets/lightningchart.png?height=45px",
-  import.meta.url
+  '../../assets/lightningchart.png?height=45px',
+  import.meta.url,
 );
 
-export const SkillsPage: FC = () => {
+const SkillsPage = memo(function SkillsPage() {
   return (
     <div className="skills-page">
       <p className="skill-page-title">UMIEJĘTNOŚCI</p>
@@ -59,7 +58,7 @@ export const SkillsPage: FC = () => {
       </ul>
     </div>
   );
-};
+});
 
 interface SkillProps {
   icon?: IconType;
@@ -79,3 +78,5 @@ const Skill: FC<SkillProps> = (props) => {
     </li>
   );
 };
+
+export default SkillsPage;
