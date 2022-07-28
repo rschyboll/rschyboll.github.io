@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, createContext, useContext } from 'react';
 
 import ExperiencePage from '@/pages/experience';
 import FooterPage from '@/pages/footer';
@@ -6,9 +6,26 @@ import SkillsPage from '@/pages/skills';
 
 import './style.scss';
 
+enum Themes {
+  light = 'light-theme',
+  dark = 'dark-theme',
+}
+
+const ThemeContext = createContext(Themes.light);
+
 export const App: FC = () => {
   return (
-    <div className="layout-body">
+    <ThemeContext.Provider value={Themes.dark}>
+      <AppLayout />
+    </ThemeContext.Provider>
+  );
+};
+
+const AppLayout: FC = () => {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <div className={`layout-body ${theme}`}>
       <section id="layout-title-page"></section>
       <section id="layout-about-page"></section>
       <section id="layout-projects-page"></section>

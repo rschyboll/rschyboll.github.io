@@ -1,0 +1,19 @@
+.light-theme {
+  --dark-background: #e9d5a1;
+  --very-light-background: #7f7f7f;
+  --light-background: #efe1bd;
+  --very-dark-background: #1f1f1f;
+  --icon-background: rgb(174, 148, 79);
+  --tag-color: #f9f5e9;
+  --tag-text-color: black;
+}
+
+.dark-theme {
+  --dark-background: #494949;
+  --very-light-background: #ffffff;
+  --light-background: #5b5b5b;
+  --very-dark-background: #1f1f1f;
+  --icon-background: #919191;
+  --tag-color: #919191;
+  --tag-text-color: white;
+}

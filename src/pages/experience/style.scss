@@ -1,10 +1,52 @@
 .experience-page-title {
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 1%;
   display: flex;
   justify-content: center;
   font-size: 18px;
   letter-spacing: 4px;
+}
+
+.experience-page-bookmarks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 4%;
+}
+
+.experience-page-bookmark {
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10rem;
+  padding: 5px 8px;
+  transition: background-color 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.light-theme .experience-page-bookmark:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.light-theme .experience-page-bookmark.active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-theme .experience-page-bookmark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .experience-page-bookmark.active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline.vertical-timeline--two-columns {
+    max-width: 66% !important;
+  }
 }
 
 .vertical-timeline::before {
@@ -46,4 +88,13 @@
 
 .timeline-date {
   color: black;
+}
+
+.timeline-content-tags {
+  margin-top: 1rem;
+}
+
+.timeline-content-tags-list {
+  display: inline-flex;
+  gap: 0.4rem;
 }

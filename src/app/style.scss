@@ -6,22 +6,23 @@
 #layout-title-page {
   height: 100vh;
   width: 100%;
-  background-color: #e9d5a1;
+  background-color: var(--dark-background);
 }
 
 #layout-about-page {
 }
 
 #layout-skills-page {
-  background-color: #1f1f1f;
+  background-color: var(--very-dark-background);
   min-height: 200px;
 }
 
 #layout-experience-page {
-  background-color: #efe1bd;
+  background-color: var(--light-background);
+  min-height: 850px;
 }
 
 #layout-footer-page {
   min-height: 100px;
-  background-color: #1f1f1f;
+  background-color: var(--very-dark-background);
 }
