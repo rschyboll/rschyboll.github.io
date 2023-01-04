@@ -1,13 +1,6 @@
-.experience-page-title {
+.experience-page-bookmarks {
   padding-top: 5%;
   padding-bottom: 1%;
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  letter-spacing: 4px;
-}
-
-.experience-page-bookmarks {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +17,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.dark-theme .vertical-timeline-element-content {
+  background: rgb(223, 223, 223);
+}
+
+.dark-theme
+  .vertical-timeline-element--no-children
+  .vertical-timeline-element-content {
+  background: transparent;
 }
 
 .light-theme .experience-page-bookmark:hover {
@@ -97,4 +103,10 @@
 .timeline-content-tags-list {
   display: inline-flex;
   gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.timeline-icon {
+  background: var(--icon-background);
+  color: #ffffff;
 }

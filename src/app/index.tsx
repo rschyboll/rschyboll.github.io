@@ -1,8 +1,10 @@
 import { FC, createContext, useContext } from 'react';
 
+import AboutMePage from '@/pages/aboutMe';
 import ExperiencePage from '@/pages/experience';
 import FooterPage from '@/pages/footer';
 import SkillsPage from '@/pages/skills';
+import TitlePage from '@/pages/title';
 
 import './style.scss';
 
@@ -26,8 +28,12 @@ const AppLayout: FC = () => {
 
   return (
     <div className={`layout-body ${theme}`}>
-      <section id="layout-title-page"></section>
-      <section id="layout-about-page"></section>
+      <section id="layout-title-page">
+        <TitlePage />
+      </section>
+      <section id="layout-about-page">
+        <AboutMePage />
+      </section>
       <section id="layout-projects-page"></section>
       <section id="layout-skills-page">
         <SkillsPage />

@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 import { Trans } from 'react-i18next';
 import { IoSchoolSharp } from 'react-icons/io5';
-import { MdOutlineWork } from 'react-icons/md';
+import { MdHourglassFull, MdOutlineWork } from 'react-icons/md';
 import { RiBookOpenLine, RiUserFill } from 'react-icons/ri';
 import {
   VerticalTimeline,
@@ -16,7 +16,6 @@ import './style.scss';
 enum Bookmarks {
   Education,
   Work,
-  Personal,
 }
 
 const ExperiencePage = memo(function ExperiencePage() {
@@ -24,9 +23,6 @@ const ExperiencePage = memo(function ExperiencePage() {
 
   return (
     <div className="experience-page">
-      <div className="experience-page-title">
-        <Trans>pages.experience</Trans>
-      </div>
       <div className="experience-page-bookmarks">
         <div
           onClick={() => setBookmark(Bookmarks.Education)}
@@ -34,8 +30,8 @@ const ExperiencePage = memo(function ExperiencePage() {
             bookmark == Bookmarks.Education ? 'active' : ''
           }`}
         >
-          <IoSchoolSharp />
-          <Trans>Wykształcenie</Trans>
+          <MdOutlineWork />
+          <Trans>pages.education</Trans>
         </div>
         <div
           onClick={() => setBookmark(Bookmarks.Work)}
@@ -43,24 +39,14 @@ const ExperiencePage = memo(function ExperiencePage() {
             bookmark == Bookmarks.Work ? 'active' : ''
           }`}
         >
-          <MdOutlineWork />
-          <Trans>Zawodowe</Trans>
-        </div>
-        <div
-          onClick={() => setBookmark(Bookmarks.Personal)}
-          className={`experience-page-bookmark ${
-            bookmark == Bookmarks.Personal ? 'active' : ''
-          }`}
-        >
-          <RiUserFill />
-          <Trans>Osobiste</Trans>
+          <IoSchoolSharp />
+          <Trans>pages.experience</Trans>
         </div>
       </div>
       <div className="experience-page-content">
         <VerticalTimeline>
           {bookmark == Bookmarks.Education ? <EducationTimeline /> : null}{' '}
           {bookmark == Bookmarks.Work ? <WorkTimeline /> : null}{' '}
-          {bookmark == Bookmarks.Personal ? <PersonalTimeline /> : null}
         </VerticalTimeline>
       </div>
     </div>
@@ -71,39 +57,96 @@ const WorkTimeline = () => {
   return (
     <>
       <VerticalTimelineElement
-        date="2011 - present"
+        date="2020 - present"
+        className="timeline-card"
         dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
+        iconClassName="timeline-icon"
         icon={<IoSchoolSharp />}
       >
-        <h3 className="vertical-timeline-element-title">
-          Informatyka - stopień 2
-        </h3>
+        <h3 className="vertical-timeline-element-title">Frontend developer</h3>
         <h4 className="vertical-timeline-element-subtitle">
-          Politechnika Opolska
+          CONTROL Sp. z o.o.
         </h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
-        </p>
+        <div className="timeline-content-tags">
+          <div className="timeline-content-tags-list">
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              TypeScript
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              React
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              Redux
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              KeaJS
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              PrimeReact
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              LightningChartJS
+            </Tag>
+          </div>
+        </div>
       </VerticalTimelineElement>
       <VerticalTimelineElement
-        date="2011 - present"
+        date="2019 - 2020"
         dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
+        iconClassName="timeline-icon"
         icon={<IoSchoolSharp />}
       >
         <h3 className="vertical-timeline-element-title">
-          Informatyka - stopień 2
+          Junior flutter developer
         </h3>
         <h4 className="vertical-timeline-element-subtitle">
-          Politechnika Opolska
+          CONTROL Sp. z o.o.
         </h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
-        </p>
+        <div className="timeline-content-tags">
+          <div className="timeline-content-tags-list">
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              Dart
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              Flutter
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              Redux
+            </Tag>
+          </div>
+        </div>
       </VerticalTimelineElement>
+      <VerticalTimelineElement
+        date="2018 - 2019"
+        dateClassName="timeline-date"
+        iconClassName="timeline-icon"
+        icon={<IoSchoolSharp />}
+      >
+        <h3 className="vertical-timeline-element-title">
+          Junior python developer
+        </h3>
+        <h4 className="vertical-timeline-element-subtitle">
+          CONTROL Sp. z o.o.
+        </h4>
+        <div className="timeline-content-tags">
+          <div className="timeline-content-tags-list">
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              Python
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              PyQt
+            </Tag>
+            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
+              PySerial
+            </Tag>
+          </div>
+        </div>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        dateClassName="timeline-date"
+        iconClassName="timeline-icon"
+        icon={<MdHourglassFull />}
+      />
     </>
   );
 };
@@ -114,7 +157,7 @@ const EducationTimeline = () => {
       <VerticalTimelineElement
         date="2011 - present"
         dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
+        iconClassName="timeline-icon"
         icon={<IoSchoolSharp />}
       >
         <h3 className="vertical-timeline-element-title">
@@ -131,7 +174,7 @@ const EducationTimeline = () => {
       <VerticalTimelineElement
         date="2018 - 2022"
         dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
+        iconClassName="timeline-icon"
         icon={<IoSchoolSharp />}
       >
         <h3 className="vertical-timeline-element-title">
@@ -146,76 +189,10 @@ const EducationTimeline = () => {
         </p>
       </VerticalTimelineElement>
       <VerticalTimelineElement
-        date="2014 - 2018"
         dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
-        icon={<RiBookOpenLine />}
-      >
-        <h3 className="vertical-timeline-element-title">Technik informatyk</h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Zespół Szkół Elektrycznych w Opolu
-        </h4>
-        <div className="timeline-content-tags">
-          <div className="timeline-content-tags-list">
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              E12
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              E13
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              E14
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              E15
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              E16
-            </Tag>
-          </div>
-        </div>
-      </VerticalTimelineElement>
-    </>
-  );
-};
-
-const PersonalTimeline = () => {
-  return (
-    <>
-      <VerticalTimelineElement
-        date="2011 - present"
-        dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Informatyka - stopień 2
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Politechnika Opolska
-        </h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        date="2011 - present"
-        dateClassName="timeline-date"
-        iconStyle={{ background: 'var(--icon-background)', color: '#ffffff' }}
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Informatyka - stopień 2
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Politechnika Opolska
-        </h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
-        </p>
-      </VerticalTimelineElement>
+        iconClassName="timeline-icon"
+        icon={<MdHourglassFull />}
+      />
     </>
   );
 };

@@ -15,8 +15,10 @@ import {
 
 import './style.scss';
 
+console.log(Image);
+
 const imageUrl = new URL(
-  '../../assets/lightningchart.png?height=45px',
+  '../../assets/lightningchart.png?preset=thumbnail',
   import.meta.url,
 );
 
@@ -72,7 +74,7 @@ const Skill: FC<SkillProps> = (props) => {
     <li className="skill">
       <a className="skill-link" href={props.link}>
         {props.icon ? <props.icon className={`skill-icon`} /> : null}
-        {props.image ? <img src={props.image.pathname} /> : null}
+        {props.image ? <img src={props.image.pathname} height="45px" /> : null}
         <p className="skill-title">{props.title}</p>
       </a>
     </li>

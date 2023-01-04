@@ -11,7 +11,6 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "ignorePatterns": ["**/*Type.ts"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -25,7 +24,12 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "@seiyab/eslint-plugin-react-hooks",
+    "@typescript-eslint",
+    "eslint-plugin-tsdoc"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-namespace": "off"
