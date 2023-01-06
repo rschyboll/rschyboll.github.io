@@ -7,9 +7,9 @@ import en from '@/translations/en.json';
 import pl from '@/translations/pl.json';
 
 const resources = {
-  en,
-  pl,
-  de,
+  en: { translation: en },
+  pl: { translation: pl },
+  de: { translation: de },
 };
 
 export const availableLanguages = Object.keys(resources);
@@ -20,11 +20,11 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
+    detection: {
+      order: ['localStorage', 'navigator'],
+    },
+    initImmediate: false,
     react: {
-      bindI18n: 'languageChanged',
-      bindI18nStore: '',
-      transEmptyNodeValue: '',
-      transSupportBasicHtmlNodes: true,
       transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
       useSuspense: false,
     },

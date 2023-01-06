@@ -15,9 +15,18 @@
   align-items: center;
 }
 
+.bottomArea {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   color: var(--title-icon-color);
 }
 
@@ -31,4 +40,34 @@
   font-size: 25px;
   color: var(--text-color);
   font-weight: 300;
+}
+
+.darkModeIcon {
+  margin-top: 10px;
+}
+
+.languageSwitcher {
+  display: flex;
+  gap: 1rem;
+}
+
+.languageButton {
+  width: 50px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: red;
+  cursor: pointer;
+
+  img {
+    width: 50px;
+    height: 36px;
+    border-radius: 8px;
+    filter: brightness(75%);
+  }
+}
+
+.languageButton.selected {
+  img {
+    filter: none;
+  }
 }

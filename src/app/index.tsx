@@ -1,4 +1,4 @@
-import { FC, createContext, useContext } from 'react';
+import { FC, createContext, useContext, useState } from 'react';
 
 import AboutMePage from '@/pages/aboutMe';
 import ExperiencePage from '@/pages/experience';
@@ -8,26 +8,31 @@ import TitlePage from '@/pages/title';
 
 import './style.scss';
 
-enum Themes {
+export enum Themes {
   light = 'light-theme',
   dark = 'dark-theme',
 }
 
-const ThemeContext = createContext(Themes.light);
+export const ThemeContext = createContext({
+  theme: Themes.light,
+  setTheme: (theme: Themes) => {},
+});
 
 export const App: FC = () => {
+  const [theme, setTheme] = useState(Themes.light);
+
   return (
-    <ThemeContext.Provider value={Themes.dark}>
+    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
       <AppLayout />
     </ThemeContext.Provider>
   );
 };
 
 const AppLayout: FC = () => {
-  const theme = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext);
 
   return (
-    <div className={`layout-body ${theme}`}>
+    <div className={`layout-body ${themeContext.theme}`}>
       <section id="layout-title-page">
         <TitlePage />
       </section>

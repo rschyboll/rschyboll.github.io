@@ -1,8 +1,6 @@
 import { memo, useState } from 'react';
-import { Trans } from 'react-i18next';
 import { IoSchoolSharp } from 'react-icons/io5';
 import { MdHourglassFull, MdOutlineWork } from 'react-icons/md';
-import { RiBookOpenLine, RiUserFill } from 'react-icons/ri';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -10,6 +8,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 
 import Tag from '@/components/tag';
+import { Trans } from '@/components/trans';
 
 import './style.scss';
 
