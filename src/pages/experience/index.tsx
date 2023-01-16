@@ -9,8 +9,11 @@ import 'react-vertical-timeline-component/style.min.css';
 
 import Tag from '@/components/tag';
 import { Trans } from '@/components/trans';
+import { Technology, getTechnologyTitle } from '@/resources';
 
+import { EducationModel, ExperienceModel } from './model';
 import './style.scss';
+import styles from './styles.module.scss';
 
 enum Bookmarks {
   Education,
@@ -44,11 +47,53 @@ const ExperiencePage = memo(function ExperiencePage() {
       </div>
       <div className="experience-page-content">
         <VerticalTimeline>
-          {bookmark == Bookmarks.Education ? <EducationTimeline /> : null}{' '}
-          {bookmark == Bookmarks.Work ? <WorkTimeline /> : null}{' '}
+          {(bookmark == Bookmarks.Education
+            ? EducationModel
+            : ExperienceModel
+          ).map((model) => {
+            return (
+              <VerticalTimelineElement
+                date={model.date}
+                className="timeline-card"
+                dateClassName="timeline-date"
+                iconClassName="timeline-icon"
+                icon={<model.icon />}
+              >
+                <TimelineElementBody {...model} />
+              </VerticalTimelineElement>
+            );
+          })}
+          {bookmark == Bookmarks.Education ? <EducationTimeline /> : null}
+          {bookmark == Bookmarks.Work ? <WorkTimeline /> : null}
         </VerticalTimeline>
       </div>
     </div>
+  );
+});
+
+interface TimelineElementBodyProps {
+  title: string;
+  subTitle: string;
+  technologies: Technology[];
+}
+
+const TimelineElementBody = memo(function TimelineElementBody(
+  props: TimelineElementBodyProps,
+) {
+  return (
+    <>
+      <h3 className="vertical-timeline-element-title">{props.title}</h3>
+      <h4 className="vertical-timeline-element-subtitle">{props.subTitle}</h4>
+      <ul>
+        {props.technologies.map((technology) => {
+          return (
+            <li>
+              <Tag>{getTechnologyTitle(technology)}</Tag>
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 });
 

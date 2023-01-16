@@ -6,10 +6,12 @@ import de from '@/translations/de.json';
 import en from '@/translations/en.json';
 import pl from '@/translations/pl.json';
 
+import { Language } from './resources';
+
 const resources = {
-  en: { translation: en },
-  pl: { translation: pl },
-  de: { translation: de },
+  [Language.en]: { translation: en },
+  [Language.pl]: { translation: pl },
+  [Language.de]: { translation: de },
 };
 
 export const availableLanguages = Object.keys(resources);

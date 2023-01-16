@@ -1,0 +1,49 @@
+.page {
+  background-color: var(--very-dark-background);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding-bottom: 125px;
+  padding-top: 50px;
+
+  .title {
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+}
+
+.skillCard {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  background-color: rgba(248, 245, 244, 0.05);
+  width: 120px;
+  margin: 5px 10px;
+  border-radius: 8px;
+  user-select: none;
+
+  .skillLink {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+  }
+
+  .skillIcon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .skillTitle {
+    margin: 5px 0;
+  }
+}

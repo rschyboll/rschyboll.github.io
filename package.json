@@ -28,6 +28,8 @@
     "@fontsource/lato": "^4.5.8",
     "i18next": "^21.8.14",
     "i18next-browser-languagedetector": "^6.1.4",
+    "primeicons": "^6.0.1",
+    "primereact": "^8.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.1",

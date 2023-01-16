@@ -4,12 +4,9 @@ import { RiCodeBoxLine } from 'react-icons/ri';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import { ThemeContext, Themes } from '@/app';
+import { Language, getLanguageFlag } from '@/resources';
 
 import styles from './style.module.scss';
-
-const plFlagURL = new URL('@/assets/pl_flag.webp', import.meta.url);
-const deFlagURL = new URL('@/assets/de_flag.png', import.meta.url);
-const enFlagURL = new URL('@/assets/en_flag.webp', import.meta.url);
 
 const TitlePage = memo(function TitlePage() {
   const themeContext = useContext(ThemeContext);
@@ -27,7 +24,7 @@ const TitlePage = memo(function TitlePage() {
       <div className={styles.centerArea}>
         <RiCodeBoxLine className={styles.icon} />
         <h1 className={styles.name}>Robin Schyboll</h1>
-        <span className={styles.position}> FULL-STACK DEVELOPER</span>
+        <span className={styles.position}>FULL-STACK DEVELOPER</span>
 
         <DarkModeSwitch
           className={styles.darkModeIcon}
@@ -46,43 +43,28 @@ const TitlePage = memo(function TitlePage() {
 const LanguageSwitcher = memo(function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
-  const setPlLanguage = useCallback(() => {
-    i18n.changeLanguage('pl');
+  const changeLanguage = useCallback((language: Language) => {
+    i18n.changeLanguage(language);
   }, []);
-
-  const setDeLanguage = useCallback(() => {
-    i18n.changeLanguage('de');
-  }, []);
-
-  const setEnLanguage = useCallback(() => {
-    i18n.changeLanguage('en');
-  }, []);
-
-  console.log(i18n.language);
 
   return (
     <div className={styles.languageSwitcher}>
-      <LanguageButton
-        selected={i18n.language == 'pl'}
-        image={plFlagURL}
-        onClick={setPlLanguage}
-      />
-      <LanguageButton
-        selected={i18n.language == 'de'}
-        image={deFlagURL}
-        onClick={setDeLanguage}
-      />
-      <LanguageButton
-        selected={i18n.language == 'en'}
-        image={enFlagURL}
-        onClick={setEnLanguage}
-      />
+      {Object.values(Language).map((language) => {
+        return (
+          <LanguageButton
+            key={language}
+            selected={language == i18n.language}
+            image={getLanguageFlag(language)}
+            onClick={() => changeLanguage(language)}
+          />
+        );
+      })}
     </div>
   );
 });
 
 interface LanguageButtonProps {
-  image: URL;
+  image: string;
   onClick: () => void;
   selected: boolean;
 }
@@ -96,9 +78,8 @@ const LanguageButton = memo(function LanguageButton(
       className={`${styles.languageButton} ${
         props.selected ? styles.selected : ''
       }`}
-    >
-      <img src={props.image.pathname} />
-    </div>
+      style={{ background: `url(${props.image})` }}
+    ></div>
   );
 });
 

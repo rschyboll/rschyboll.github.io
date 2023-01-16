@@ -2,8 +2,29 @@
   "pages": {
     "experience": "doświadczenie",
     "education": "wykształcenie",
-    "aboutMe": "o mnie"
+    "aboutMe": "o mnie",
+    "projects": "projekty",
+    "skills": "umiejętności"
   },
   "hi": "Cześć!",
-  "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "ocs": {
+    "main": "Jest to dotychczas największy projekt którego byłem częścią. Byłem odpowiedzialny za stworzenie frontendu dla systemu SCADA, z użyciem nowych technologii webowych.",
+    "des1": "Strona została zaprojektowana tak, aby odzwierciedlała działanie środowiska graficznego z komputerów stacjonarnych.",
+    "des2": "Możliwe jest wyświetlanie dużych ilości danych o dużym zagęszczeniu, oraz podgląd danych na żywo.",
+    "des3": "Ładowanie danych odbywa się przy pomocy technologii gRPC. Zapytania i konwertowanie danych odbywa się w Web Workerze, dzięki czemu UI nie jest blokowane gdy jest ładowana duża ilość danych.",
+    "des4": "Tabelki wspierają paginację, wraz z sortowaniem oraz filtrowaniem danych."
+  },
+  "bitrender": {
+    "main": "Jest to mój osobisty projekt, który pierwotnie był utworzony jako moja praca inżynierska, a obecnie służy mi jako środowisko do nauki nowych technologii oraz rozwiązań programistycznych.",
+    "main1": "Jest to serwis, który umożliwia renderowanie scen oraz animacji z programu Blender, na wielu maszynach równocześnie. Jego wyróżniającą cechą jest to, że pozwala on na wyrenderowanie pojedynczej klatki, na wielu maszynach jednocześnie w sposób automatyczny, tzn. nie wymaga określania żadnych parametrów, w jaki sposób rozdzielić tą klatkę.",
+    "des1": "Obecnie jestem w trakcie rozszerzania systemu o obsługę logowania użytkowników, wraz z zarządzaniem uprawnień i roli.",
+    "des2": "Serwis pozwala na podzielenie renderowania pojedynczej klatki na wiele maszyn, poprzez podzielenie liczby próbek danej klatki wymaganej do jej wyrenderowania, i automatyczne połączenie rezultatu spowrotem w jedno zdjęcie. (na zdjęciu znajduje się wizualizacja algorytmu łączącego rezultaty z 4 maszyn, w jedno zdjęcie)",
+    "des3": "Serwis potrafi zarządzać wieloma maszynami renderującymi o różnych wydajnościach, poprzez testowanie ich mocy obliczeniowej, co później jest użyte przy procesie rozdzielania zadań."
+  },
+  "education": {
+    "university": "Politechnika Opolska",
+    "university1": "Informatyka - stopień 1",
+    "university2": "Informatyka - stopień 2"
+  }
 }
