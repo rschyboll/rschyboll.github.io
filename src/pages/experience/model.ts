@@ -1,12 +1,15 @@
 import { IoSchoolSharp } from 'react-icons/io5';
 
+import { getTechnologyIcon } from '@/resources';
+
 import { Technology } from './../../resources';
 
 export const ExperienceModel = [
   {
     title: 'Frontend developer',
     subTitle: 'Control Sp. z o.o.',
-    date: '2020 - present',
+    date: '2020',
+    present: true,
     technologies: [
       Technology.typescript,
       Technology.react,
@@ -15,21 +18,21 @@ export const ExperienceModel = [
       Technology.primeReact,
       Technology.lightningchart,
     ],
-    icon: IoSchoolSharp,
+    icon: getTechnologyIcon(Technology.react),
   },
   {
     title: 'Junior flutter developer',
     subTitle: 'Control Sp. z o.o.',
     date: '2019 - 2020',
     technologies: [Technology.dart, Technology.flutter, Technology.redux],
-    icon: IoSchoolSharp,
+    icon: getTechnologyIcon(Technology.flutter),
   },
   {
-    title: 'Junior flutter developer',
+    title: 'Junior python developer',
     subTitle: 'Control Sp. z o.o.',
     date: '2018 - 2019',
     technologies: [Technology.python, Technology.qt, Technology.pySerial],
-    icon: IoSchoolSharp,
+    icon: getTechnologyIcon(Technology.python),
   },
 ];
 
@@ -37,15 +40,21 @@ export const EducationModel = [
   {
     title: 'education.university1',
     subTitle: 'education.university',
-    date: '2019 - 2020',
-    technologies: [],
+    date: '2022',
+    present: true,
+    technologies: [Technology.python],
     icon: IoSchoolSharp,
   },
   {
     title: 'education.university2',
     subTitle: 'education.university',
     date: '2019 - 2020',
-    technologies: [Technology.python],
+    technologies: [
+      Technology.python,
+      Technology.cAndPlus,
+      Technology.cSharp,
+      Technology.postgreSQL,
+    ],
     icon: IoSchoolSharp,
   },
 ];

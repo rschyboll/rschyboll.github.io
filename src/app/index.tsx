@@ -71,9 +71,7 @@ const AppLayout: FC = () => {
         <ProjectsPage />
       </section>
       <SkillsPage />
-      <section id="layout-experience-page">
-        <ExperiencePage />
-      </section>
+      <ExperiencePage />
       <footer id="layout-footer-page">
         <FooterPage />
       </footer>

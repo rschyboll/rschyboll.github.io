@@ -12,9 +12,9 @@ const SkillsPage = memo(function SkillsPage() {
       <p className={styles.title}>
         <Trans>pages.skills</Trans>
       </p>
-      <ul>
+      <ul className={styles.skillList}>
         {SkillsModel.map((skill) => {
-          return <SkillCard {...skill} />;
+          return <SkillCard key={skill.technology} {...skill} />;
         })}
       </ul>
     </div>

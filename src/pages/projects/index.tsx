@@ -10,6 +10,7 @@ import { Trans } from '@/components/trans';
 import {
   Project,
   Technology,
+  getProjectCardImage,
   getProjectImage,
   getProjectVideo,
   getTechnologyIcon,
@@ -139,7 +140,7 @@ const ProjectsPage = memo(function ExperiencePage() {
                 title={projectDef.title}
                 date={projectDef.date}
                 technologies={projectDef.technologies}
-                image={getProjectImage(project)}
+                image={getProjectCardImage(project)}
                 onClick={() => openDialog(project)}
               />
             );

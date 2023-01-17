@@ -1,4 +1,5 @@
 import { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { IoSchoolSharp } from 'react-icons/io5';
 import { MdHourglassFull, MdOutlineWork } from 'react-icons/md';
 import {
@@ -12,8 +13,7 @@ import { Trans } from '@/components/trans';
 import { Technology, getTechnologyTitle } from '@/resources';
 
 import { EducationModel, ExperienceModel } from './model';
-import './style.scss';
-import styles from './styles.module.scss';
+import styles from './style.module.scss';
 
 enum Bookmarks {
   Education,
@@ -24,12 +24,12 @@ const ExperiencePage = memo(function ExperiencePage() {
   const [bookmark, setBookmark] = useState(Bookmarks.Work);
 
   return (
-    <div className="experience-page">
-      <div className="experience-page-bookmarks">
+    <div className={styles.page}>
+      <div className={styles.bookmarks}>
         <div
           onClick={() => setBookmark(Bookmarks.Education)}
-          className={`experience-page-bookmark ${
-            bookmark == Bookmarks.Education ? 'active' : ''
+          className={`${styles.bookmark} ${
+            bookmark == Bookmarks.Education ? styles.active : ''
           }`}
         >
           <MdOutlineWork />
@@ -37,37 +37,53 @@ const ExperiencePage = memo(function ExperiencePage() {
         </div>
         <div
           onClick={() => setBookmark(Bookmarks.Work)}
-          className={`experience-page-bookmark ${
-            bookmark == Bookmarks.Work ? 'active' : ''
+          className={`${styles.bookmark} ${
+            bookmark == Bookmarks.Work ? styles.active : ''
           }`}
         >
           <IoSchoolSharp />
           <Trans>pages.experience</Trans>
         </div>
       </div>
-      <div className="experience-page-content">
-        <VerticalTimeline>
-          {(bookmark == Bookmarks.Education
-            ? EducationModel
-            : ExperienceModel
-          ).map((model) => {
-            return (
-              <VerticalTimelineElement
-                date={model.date}
-                className="timeline-card"
-                dateClassName="timeline-date"
-                iconClassName="timeline-icon"
-                icon={<model.icon />}
-              >
-                <TimelineElementBody {...model} />
-              </VerticalTimelineElement>
-            );
-          })}
-          {bookmark == Bookmarks.Education ? <EducationTimeline /> : null}
-          {bookmark == Bookmarks.Work ? <WorkTimeline /> : null}
-        </VerticalTimeline>
-      </div>
+      <Timeline bookmark={bookmark} />
     </div>
+  );
+});
+
+interface TimelineProps {
+  bookmark: Bookmarks;
+}
+
+const Timeline = memo(function Timeline(props: TimelineProps) {
+  const { t } = useTranslation();
+
+  return (
+    <VerticalTimeline>
+      {(props.bookmark == Bookmarks.Education
+        ? EducationModel
+        : ExperienceModel
+      ).map((model) => {
+        return (
+          <VerticalTimelineElement
+            key={model.title}
+            date={
+              model.date +
+              ('present' in model && model.present ? ` - ${t('present')}` : '')
+            }
+            textClassName={styles.timelineElement}
+            dateClassName={styles.timelineElementDate}
+            iconClassName={styles.timelineElementIcon}
+            icon={<model.icon />}
+          >
+            <TimelineElementBody {...model} />
+          </VerticalTimelineElement>
+        );
+      })}
+      <VerticalTimelineElement
+        iconClassName={styles.timelineElementIcon}
+        icon={<MdHourglassFull />}
+      />
+    </VerticalTimeline>
   );
 });
 
@@ -82,13 +98,19 @@ const TimelineElementBody = memo(function TimelineElementBody(
 ) {
   return (
     <>
-      <h3 className="vertical-timeline-element-title">{props.title}</h3>
-      <h4 className="vertical-timeline-element-subtitle">{props.subTitle}</h4>
-      <ul>
+      <h3 className={styles.timelineElementTitle}>
+        <Trans>{props.title}</Trans>
+      </h3>
+      <h4 className={styles.timelineElementSubtitle}>
+        <Trans>{props.subTitle}</Trans>
+      </h4>
+      <ul className={styles.technologyList}>
         {props.technologies.map((technology) => {
           return (
-            <li>
-              <Tag>{getTechnologyTitle(technology)}</Tag>
+            <li key={technology}>
+              <Tag className={styles.technologyTag}>
+                {getTechnologyTitle(technology)}
+              </Tag>
             </li>
           );
         })}
@@ -96,149 +118,5 @@ const TimelineElementBody = memo(function TimelineElementBody(
     </>
   );
 });
-
-const WorkTimeline = () => {
-  return (
-    <>
-      <VerticalTimelineElement
-        date="2020 - present"
-        className="timeline-card"
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">Frontend developer</h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          CONTROL Sp. z o.o.
-        </h4>
-        <div className="timeline-content-tags">
-          <div className="timeline-content-tags-list">
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              TypeScript
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              React
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              Redux
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              KeaJS
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              PrimeReact
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              LightningChartJS
-            </Tag>
-          </div>
-        </div>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        date="2019 - 2020"
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Junior flutter developer
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          CONTROL Sp. z o.o.
-        </h4>
-        <div className="timeline-content-tags">
-          <div className="timeline-content-tags-list">
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              Dart
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              Flutter
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              Redux
-            </Tag>
-          </div>
-        </div>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        date="2018 - 2019"
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Junior python developer
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          CONTROL Sp. z o.o.
-        </h4>
-        <div className="timeline-content-tags">
-          <div className="timeline-content-tags-list">
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              Python
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              PyQt
-            </Tag>
-            <Tag textColor="var(--tag-text-color)" color="var(--tag-color)">
-              PySerial
-            </Tag>
-          </div>
-        </div>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<MdHourglassFull />}
-      />
-    </>
-  );
-};
-
-const EducationTimeline = () => {
-  return (
-    <>
-      <VerticalTimelineElement
-        date="2011 - present"
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Informatyka - stopień 2
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Politechnika Opolska
-        </h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        date="2018 - 2022"
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<IoSchoolSharp />}
-      >
-        <h3 className="vertical-timeline-element-title">
-          Informatyka - stopień 1
-        </h3>
-        <h4 className="vertical-timeline-element-subtitle">
-          Politechnika Opolska
-        </h4>
-        <p>
-          Creative Direction, User Experience, Visual Design, Project
-          Management, Team Leading
-        </p>
-      </VerticalTimelineElement>
-      <VerticalTimelineElement
-        dateClassName="timeline-date"
-        iconClassName="timeline-icon"
-        icon={<MdHourglassFull />}
-      />
-    </>
-  );
-};
 
 export default ExperiencePage;

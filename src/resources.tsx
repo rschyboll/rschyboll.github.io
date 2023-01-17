@@ -130,6 +130,10 @@ export enum Project {
   BITRENDER = 'bitrender',
 }
 
+export function getProjectCardImage(project: Project): string {
+  return `./projectCards/${project}.webp`;
+}
+
 export function getProjectImage(project: Project, imageNr?: number): string {
   return new URL(
     `./assets/projects/${project}${imageNr?.toString() || ''}.webp`,
