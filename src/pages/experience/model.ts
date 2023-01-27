@@ -8,7 +8,7 @@ export const ExperienceModel = [
   {
     title: 'Frontend developer',
     subTitle: 'Control Sp. z o.o.',
-    date: '2020',
+    date: '2021',
     present: true,
     technologies: [
       Technology.typescript,
@@ -23,14 +23,14 @@ export const ExperienceModel = [
   {
     title: 'Junior flutter developer',
     subTitle: 'Control Sp. z o.o.',
-    date: '2019 - 2020',
+    date: '2020 - 2021',
     technologies: [Technology.dart, Technology.flutter, Technology.redux],
     icon: getTechnologyIcon(Technology.flutter),
   },
   {
     title: 'Junior python developer',
     subTitle: 'Control Sp. z o.o.',
-    date: '2018 - 2019',
+    date: '2019 - 2020',
     technologies: [Technology.python, Technology.qt, Technology.pySerial],
     icon: getTechnologyIcon(Technology.python),
   },
@@ -48,7 +48,7 @@ export const EducationModel = [
   {
     title: 'education.university2',
     subTitle: 'education.university',
-    date: '2019 - 2020',
+    date: '2019 - 2022',
     technologies: [
       Technology.python,
       Technology.cAndPlus,

@@ -42,7 +42,11 @@ $dotSize: 10px;
   border-radius: 0 0 5px 5px;
   background-color: #696969;
 
-  color: var(--inverted-text-color);
+  color: white;
+}
+
+:global(.dark-theme) .cardDate {
+  background-color: #918e97;
 }
 
 .cardImage {
@@ -207,8 +211,12 @@ $dotSize: 10px;
   margin-top: 0;
 }
 
-.dialogDescription.current {
+:global(.light-theme) .dialogDescription.current {
   text-shadow: 0px 0px 1px black;
+}
+
+:global(.dark-theme) .dialogDescription.current {
+  text-shadow: 0px 0px 1px white;
 }
 
 .dialogTechnologies {

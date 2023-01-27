@@ -21,10 +21,11 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en',
+    fallbackLng: Language.en,
     detection: {
       order: ['localStorage', 'navigator'],
     },
+    supportedLngs: availableLanguages,
     initImmediate: false,
     react: {
       transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],

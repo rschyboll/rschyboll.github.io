@@ -6,15 +6,26 @@
     "projects": "projekte",
     "skills": "kompetenzen"
   },
-  "hi": "Cześć!",
-  "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "hi": "Hi!",
+  "aboutMe": "Ich bin ein full-stack Entwickler aus Polen. Ich spezialisiere mich auf die Entwicklung von Front-Ends, mobilen Flutter-Apps und kompletten Web-Anwendungen, von Frontend bis Backend und Datenbank. Ich bin leidenschaftlich daran interessiert, optisch ansprechende Oberflächen, intuitives UX und 3D-Modellierung zu erstellen.",
   "ocs": {
-    "des1": ""
+    "main": "Das ist das größte Projekt, an dem ich bisher beteiligt war. Ich war verantwortlich für die Erstellung des Frontends für ein SCADA-System mit Verwendung von neuen Webtechnologien.",
+    "des1": "Die Website wurde so entworfen, dass sie die Funktionalität einer Desktop-Grafikumgebung widerspiegelt.",
+    "des2": "Es ist möglich, große Mengen an Daten mit hoher Dichte anzuzeigen und die Daten in Echtzeit anzusehen.",
+    "des3": "Das Laden der Daten erfolgt mit Hilfe der gRPC-Technologie. Anfragen und Datenkonvertierungen werden in einem Web Worker durchgeführt, so dass die UI beim Laden großer Datenmengen nicht blockiert wird.",
+    "des4": "Die Tabellen unterstützen Paginierung sowie Sortierung und Filtern der Daten."
+  },
+  "bitrender": {
+    "main": "Das ist mein persönliches Projekt, das ursprünglich als meine Ingenieurarbeit entstanden ist und jetzt als Umgebung zum Lernen von neuen Technologien und Programmierlösungen dient.",
+    "main1": "Das ist ein Service, der es ermöglicht, Szenen und Animationen aus Blender auf mehreren Maschinen gleichzeitig zu rendern. Sein hervorstechendes Merkmal ist, dass es ermöglicht, ein einzelnes Frame automatisch auf mehreren Maschinen gleichzeitig zu rendern, ohne dass Angaben darüber gemacht werden müssen, wie das Frame aufgeteilt werden soll.",
+    "des1": "Derzeit arbeite ich daran, das System um die Unterstützung von Benutzeranmeldungen sowie die Verwaltung von Berechtigungen und Rollen zu erweitern.",
+    "des2": "Der Service ermöglicht es, das Rendern eines einzelnen Frames auf mehrere Maschinen aufzuteilen, indem die Anzahl der Proben des betreffenden Frames, die zum Rendern erforderlich sind, aufgeteilt werden und das Ergebnis automatisch wieder in ein Bild zusammengefügt wird. (Das Bild zeigt eine Visualisierung des Algorithmus, der die Ergebnisse von 4 Maschinen in ein Bild zusammenfügt)",
+    "des3": "Der Service kann mehrere Rendermaschinen mit unterschiedlichen Leistungsstufen verwalten, indem er ihre Rechenleistung testet, die später im Aufgabenverteilungsprozess verwendet wird."
   },
   "education": {
     "university": "Technische Universität Opole",
     "university1": "Informatyka - Masterstudium",
     "university2": "Informatyka - Vordiplom"
   },
-  "present": "aktuell"
+  "present": "derzeit"
 }

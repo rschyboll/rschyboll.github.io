@@ -31,7 +31,9 @@ export const ThemeContext = createContext({
 });
 
 export const App: FC = () => {
-  const [theme, setTheme] = useState(Themes.light);
+  const [theme, setTheme] = useState(
+    (localStorage.getItem('theme') as Themes) || Themes.light,
+  );
 
   const changeTheme = useCallback((theme: Themes) => {
     setTheme(theme);
@@ -43,6 +45,7 @@ export const App: FC = () => {
         themeLink.href = DarkThemeURL;
       }
     }
+    localStorage.setItem('theme', theme);
   }, []);
 
   useEffect(() => {
@@ -72,9 +75,7 @@ const AppLayout: FC = () => {
       </section>
       <SkillsPage />
       <ExperiencePage />
-      <footer id="layout-footer-page">
-        <FooterPage />
-      </footer>
+      <FooterPage />
       <div id="dialog-container"></div>
     </div>
   );

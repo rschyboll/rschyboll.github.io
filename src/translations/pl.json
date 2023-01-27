@@ -7,7 +7,7 @@
     "skills": "umiejętności"
   },
   "hi": "Cześć!",
-  "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "aboutMe": "Jestem programistą full-stack. Specjalizuję się w tworzeniu front-endów, aplikacji mobilnych w technologii Flutter oraz pełnych aplikacji webowych od frontendu po backend, razem z bazą danych. Jestem pasjonatem tworzenia atrakcyjnych wizualnie interfejsów, intuicyjnego UX oraz modelowania 3D.",
   "ocs": {
     "main": "Jest to dotychczas największy projekt którego byłem częścią. Byłem odpowiedzialny za stworzenie frontendu dla systemu SCADA, z użyciem nowych technologii webowych.",
     "des1": "Strona została zaprojektowana tak, aby odzwierciedlała działanie środowiska graficznego z komputerów stacjonarnych.",

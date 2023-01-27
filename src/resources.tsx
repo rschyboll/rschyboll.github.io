@@ -131,7 +131,7 @@ export enum Project {
 }
 
 export function getProjectCardImage(project: Project): string {
-  return `./projectCards/${project}.webp`;
+  return `/projectCards/${project}.webp`;
 }
 
 export function getProjectImage(project: Project, imageNr?: number): string {
@@ -142,5 +142,5 @@ export function getProjectImage(project: Project, imageNr?: number): string {
 }
 
 export function getProjectVideo(project: Project, videoNr?: number): string {
-  return `./videos/${project}${videoNr?.toString() || ''}.mp4`;
+  return `/videos/${project}${videoNr?.toString() || ''}.mp4`;
 }

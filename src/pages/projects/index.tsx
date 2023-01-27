@@ -5,7 +5,6 @@ import { Image } from 'primereact/image';
 import { memo, useCallback, useMemo, useState } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 
-import { Card } from '@/components/card';
 import { Trans } from '@/components/trans';
 import {
   Project,
@@ -18,102 +17,8 @@ import {
 } from '@/resources';
 import { capitalizeFirstLetter } from '@/utils/string';
 
+import { ProjectDef, ProjectsModel } from './model';
 import styles from './style.module.scss';
-
-interface ProjectDef {
-  title: string;
-  date: string;
-  technologies: Technology[];
-  additionalTechnologies?: Technology[];
-  description: string | string[];
-  imagesAndDescriptions: {
-    image: string;
-    description: string;
-    isMobile?: boolean;
-    isVideo?: boolean;
-  }[];
-}
-
-const ProjectsDef: Record<Project, ProjectDef> = {
-  [Project.BCONF]: {
-    title: 'BCONF',
-    date: '2021',
-    technologies: [Technology.dart, Technology.flutter],
-    description: '',
-    imagesAndDescriptions: [],
-  },
-  [Project.CDE]: {
-    title: 'CDE',
-    date: '2021',
-    technologies: [Technology.python, Technology.qt],
-    description: '',
-    imagesAndDescriptions: [],
-  },
-  [Project.OCS]: {
-    title: 'OCS',
-    date: '2021',
-    technologies: [Technology.typescript, Technology.react, Technology.redux],
-    additionalTechnologies: [
-      Technology.reduxSaga,
-      Technology.kea,
-      Technology.lightningchart,
-      Technology.primeReact,
-    ],
-    description: 'ocs.main',
-    imagesAndDescriptions: [
-      {
-        image: getProjectVideo(Project.OCS, 2),
-        description: 'ocs.des1',
-        isVideo: true,
-      },
-      {
-        image: getProjectVideo(Project.OCS, 1),
-        description: 'ocs.des2',
-        isVideo: true,
-      },
-      {
-        image: getProjectVideo(Project.OCS, 3),
-        description: 'ocs.des3',
-        isVideo: true,
-      },
-      {
-        image: getProjectImage(Project.OCS, 2),
-        description: 'ocs.des4',
-        isVideo: false,
-      },
-    ],
-  },
-  [Project.BITRENDER]: {
-    title: 'BITRENDER',
-    date: '2021',
-    technologies: [
-      Technology.typescript,
-      Technology.python,
-      Technology.fastAPI,
-    ],
-    additionalTechnologies: [
-      Technology.tortoiseORM,
-      Technology.redux,
-      Technology.kea,
-      Technology.primeReact,
-    ],
-    description: ['bitrender.main', 'bitrender.main1'],
-    imagesAndDescriptions: [
-      {
-        image: getProjectImage(Project.BITRENDER, 2),
-        description: 'bitrender.des2',
-      },
-      {
-        image: getProjectImage(Project.BITRENDER, 1),
-        description: 'bitrender.des1',
-      },
-      {
-        image: getProjectImage(Project.BITRENDER, 1),
-        description: 'bitrender.des3',
-      },
-    ],
-  },
-};
 
 const ProjectsPage = memo(function ExperiencePage() {
   const [openedProject, setOpenedProject] = useState<null | Project>(null);
@@ -132,7 +37,7 @@ const ProjectsPage = memo(function ExperiencePage() {
         <Trans>pages.projects</Trans>
       </span>
       <div className={styles.projectsContainer}>
-        {(Object.entries(ProjectsDef) as [Project, ProjectDef][]).map(
+        {(Object.entries(ProjectsModel) as [Project, ProjectDef][]).map(
           ([project, projectDef]) => {
             return (
               <ProjectCard
@@ -159,7 +64,7 @@ const ProjectsPage = memo(function ExperiencePage() {
         {openedProject != null ? (
           <ProjectDialog
             project={openedProject}
-            projectDef={ProjectsDef[openedProject]}
+            projectDef={ProjectsModel[openedProject]}
           />
         ) : null}
       </Dialog>
@@ -297,7 +202,7 @@ const ProjectDialog = memo(function ProjectDialog(props: ProjectDialogProps) {
           {Array.isArray(props.projectDef.description) ? (
             props.projectDef.description.map((description) => {
               return (
-                <p className={styles.descriptonParagraph}>
+                <p key={description} className={styles.descriptonParagraph}>
                   <Trans>{description}</Trans>
                 </p>
               );
@@ -333,8 +238,6 @@ interface DialogTechnologiesProps {
 const DialogTechnologies = memo(function DialogTechnologies(
   props: DialogTechnologiesProps,
 ) {
-  console.log('RENDER');
-
   return (
     <div className={styles.dialogTechnologies}>
       {props.technologies.map((technology) => {

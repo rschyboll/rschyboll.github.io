@@ -6,10 +6,21 @@
     "projects": "projects",
     "skills": "skills"
   },
-  "hi": "Hello!",
-  "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "hi": "Hey!",
+  "aboutMe": "I'm a full-stack developer based in Poland. I specialize in developing front-ends, mobile Flutter apps and complete web applications, from the frontend to the backend and the database. I am passionate about creating visually appealing interfaces, intuitive UX and 3D modeling.",
   "ocs": {
-    "des1": ""
+    "main": "This is the largest project that I have been a part of. I was responsible for creating the frontend for a SCADA system, using new web technologies.",
+    "des1": "The website was designed to reflect the functionality of a desktop graphical environment.",
+    "des2": "It is possible to display large amounts of data with high density, and view live data.",
+    "des3": "Data loading is done using gRPC technology. Queries and data conversion are performed in a Web Worker, so the UI is not blocked when loading large amounts of data.",
+    "des4": "The tables support pagination, along with sorting and filtering data."
+  },
+  "bitrender": {
+    "main": "This is my personal project, which was originally created as my engineering thesis, and now serves as an environment for learning new technologies and programming solutions.",
+    "main1": "This is a service that allows for rendering of scenes and animations from Blender, on multiple machines simultaneously. Its distinguishing feature is that it allows for the rendering of a single frame on multiple machines at the same time, automatically, i.e. without requiring any specification of how to divide the frame.",
+    "des1": "Currently, I am in the process of expanding the system to support user login, along with managing permissions and roles.",
+    "des2": "The service allows for the rendering of a single frame to be divided among multiple machines, by dividing the number of samples of a given frame required for its rendering, and automatically merging the result back into one image. (The picture shows a visualization of the algorithm that combines the results from 4 machines, into one image)",
+    "des3": "The service is able to manage multiple rendering machines with different performance levels, through testing their computational power, which is later used in the task-allocation process."
   },
   "education": {
     "university": "Opole University of Technology",

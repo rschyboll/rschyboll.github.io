@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { Trans } from 'react-i18next';
 
 import { Card } from '@/components/card';
+import { Trans } from '@/components/trans';
 
 import styles from './style.module.scss';
 
@@ -16,7 +16,7 @@ const AboutMePage = memo(function ExperiencePage() {
       <div className={styles.layout}>
         <Photo />
         <Card className={styles.card}>
-          <p>
+          <p className={styles.hi}>
             <Trans>hi</Trans>
           </p>
 
