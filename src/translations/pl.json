@@ -22,6 +22,11 @@
     "des2": "Serwis pozwala na podzielenie renderowania pojedynczej klatki na wiele maszyn, poprzez podzielenie liczby próbek danej klatki wymaganej do jej wyrenderowania, i automatyczne połączenie rezultatu spowrotem w jedno zdjęcie. (na zdjęciu znajduje się wizualizacja algorytmu łączącego rezultaty z 4 maszyn, w jedno zdjęcie)",
     "des3": "Serwis potrafi zarządzać wieloma maszynami renderującymi o różnych wydajnościach, poprzez testowanie ich mocy obliczeniowej, co później jest użyte przy procesie rozdzielania zadań."
   },
+  "bconf": {
+    "main": "Jest to aplikacja na urządzenia mobilne której celem jest wspomaganie w procesie instalacji oraz konfiguracji urządzeń, które są podłączane do telefonu po kablu USB.",
+    "des1": "Pozwala ona na wykonanie protokołu danej instalacji, zapisanie ich lokalnie na telefonie, w celu późniejszej synchronizacji z serwerem.",
+    "des2": "W aplikacji wbudowany był poradnik, który pozwalał użytkownikowi na zaznajomienie się z jej funkcjonalnością."
+  },
   "education": {
     "university": "Politechnika Opolska",
     "university1": "Informatyka - stopień 2",

@@ -20,6 +20,8 @@ import { capitalizeFirstLetter } from '@/utils/string';
 import { ProjectDef, ProjectsModel } from './model';
 import styles from './style.module.scss';
 
+const MobileProjects = [Project.BCONF];
+
 const ProjectsPage = memo(function ExperiencePage() {
   const [openedProject, setOpenedProject] = useState<null | Project>(null);
 
@@ -47,6 +49,7 @@ const ProjectsPage = memo(function ExperiencePage() {
                 technologies={projectDef.technologies}
                 image={getProjectCardImage(project)}
                 onClick={() => openDialog(project)}
+                isMobile={MobileProjects.includes(project)}
               />
             );
           },
@@ -78,27 +81,34 @@ interface ProjectCardProps {
   technologies: Technology[];
   image: string;
   onClick: () => void;
+  isMobile: boolean;
 }
 
 const ProjectCard = memo(function ProjectCard(props: ProjectCardProps) {
   return (
-    <div className={styles.card} onClick={props.onClick}>
-      <img className={styles.cardImage} src={props.image} />
-      <span className={styles.cardDate}>{props.date}</span>
-      <div className={styles.cardTitleContainer}>
-        <div className={styles.cardAdditionalInfo} />
-        <span className={styles.cardTitle}>{props.title}</span>
-        <span className={styles.cardAdditionalInfo}>
-          {props.technologies.map((technology) => {
-            return (
-              <img
-                key={technology}
-                src={getTechnologyLogo(technology)}
-                className={styles.cardTechnologyIcon}
-              />
-            );
-          })}
-        </span>
+    <div
+      className={`${styles.cardContainer} ${
+        props.isMobile ? styles.mobile : ''
+      }`}
+    >
+      <div className={styles.card} onClick={props.onClick}>
+        <img className={`${styles.cardImage}`} src={props.image} />
+        <span className={styles.cardDate}>{props.date}</span>
+        <div className={styles.cardTitleContainer}>
+          <div className={styles.cardAdditionalInfo} />
+          <span className={styles.cardTitle}>{props.title}</span>
+          <span className={styles.cardAdditionalInfo}>
+            {props.technologies.map((technology) => {
+              return (
+                <img
+                  key={technology}
+                  src={getTechnologyLogo(technology)}
+                  className={styles.cardTechnologyIcon}
+                />
+              );
+            })}
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -181,7 +191,11 @@ const ProjectDialog = memo(function ProjectDialog(props: ProjectDialogProps) {
         activeIndex={currentItem}
         className={styles.galleria}
         value={[
-          [getProjectImage(props.project), false],
+          [
+            getProjectImage(props.project),
+            false,
+            props.projectDef.isMobile == true ? true : false,
+          ],
           ...props.projectDef.imagesAndDescriptions.map((image) => [
             image.image,
             image.isVideo,

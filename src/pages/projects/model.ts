@@ -11,6 +11,7 @@ export interface ProjectDef {
   technologies: Technology[];
   additionalTechnologies?: Technology[];
   description: string | string[];
+  isMobile?: boolean;
   imagesAndDescriptions: {
     image: string;
     description: string;
@@ -24,8 +25,29 @@ export const ProjectsModel: Record<Project, ProjectDef> = {
     title: 'BCONF',
     date: '2021',
     technologies: [Technology.dart, Technology.flutter],
-    description: '',
-    imagesAndDescriptions: [],
+    description: 'bconf.main',
+    isMobile: true,
+    additionalTechnologies: [Technology.redux],
+    imagesAndDescriptions: [
+      {
+        image: getProjectImage(Project.BCONF, 1),
+        description: 'bconf.des1',
+        isVideo: false,
+        isMobile: true,
+      },
+      {
+        image: getProjectVideo(Project.BCONF, 1),
+        description: 'bconf.des2',
+        isVideo: true,
+        isMobile: true,
+      },
+      {
+        image: getProjectImage(Project.BCONF, 2),
+        description: 'bconf.des1',
+        isVideo: false,
+        isMobile: true,
+      },
+    ],
   },
   [Project.CDE]: {
     title: 'CDE',
