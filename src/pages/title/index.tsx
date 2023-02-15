@@ -1,12 +1,15 @@
 import { memo, useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RiCodeBoxLine } from 'react-icons/ri';
+import { RiCodeBoxLine, RiFileDownloadFill } from 'react-icons/ri';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import { ThemeContext, Themes } from '@/app';
+import { Trans } from '@/components/trans';
 import { Language, getLanguageFlag } from '@/resources';
 
 import styles from './style.module.scss';
+
+const CV = new URL('../../assets/cv.pdf', import.meta.url);
 
 const TitlePage = memo(function TitlePage() {
   const themeContext = useContext(ThemeContext);
@@ -25,13 +28,17 @@ const TitlePage = memo(function TitlePage() {
         <RiCodeBoxLine className={styles.icon} />
         <h1 className={styles.name}>Robin Schyboll</h1>
         <span className={styles.position}>FULL-STACK DEVELOPER</span>
-
         <DarkModeSwitch
           className={styles.darkModeIcon}
           checked={themeContext.theme == Themes.dark}
           onChange={onThemeChange}
           size="35px"
         />
+        <a className={styles.downloadCvLink} href={CV.pathname} target="_blank">
+          <Trans>cv</Trans>
+
+          <RiFileDownloadFill size="22px" />
+        </a>
       </div>
       <div className={styles.bottomArea}>
         <LanguageSwitcher />

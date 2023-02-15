@@ -27,5 +27,18 @@
     "university1": "Informatyka - Masterstudium",
     "university2": "Informatyka - Vordiplom"
   },
-  "present": "derzeit"
+  "bconf": {
+    "main": "Es ist eine mobile App, die darauf abzielt, bei der Installation und Konfiguration von Geräten, die über ein USB-Kabel mit dem Telefon verbunden sind, zu unterstützen.",
+    "des1": "Es ermöglicht die Erstellung von Protokollen einer bestimmten Installation und das Lokal speichern davon zur späteren Synchronisierung mit dem Server.",
+    "des2": "In der App ist ein integrierter Leitfaden enthalten, der dem Benutzer die Möglichkeit gibt, sich mit seiner Funktionalität vertraut zu machen.",
+    "des3": "Die App hat eine Integration mit einem CI/CD-System, das automatisch neue Versionen der App bereitstellt."
+  },
+  "cde": {
+    "main": "Die Anwendung wurde erstellt, um den Prozess der Programmierung und Fehlerbehebung von Telemetriegeräten zu vereinfachen.",
+    "des1": "Es ermöglicht die Kommunikation mit dem Gerät über die Konsole, das Senden von Befehlen und das Lesen von Ergebnissen.",
+    "des2": "Der Hauptzweck ist jedoch das Lesen von Geräte-Registern, direkt über die Registeransicht oder über formatierte Felder mit bestimmten Typen und das Eingeben neuer Werte.",
+    "des3": "Es kommuniziert mit dem Gerät über das Modbus-Protokoll über ein USB-Kabel oder eine Netzwerkverbindung."
+  },
+  "present": "derzeit",
+  "cv": "Lebenslauf"
 }

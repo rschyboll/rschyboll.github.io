@@ -27,5 +27,18 @@
     "university1": "Computer Engineering - graduate studies",
     "university2": "Computer Engineering - undergraduate studies"
   },
-  "present": "present"
+  "bconf": {
+    "main": "I's a mobile app that aims to assist in the installation and configuration process of devices that are connected to the phone via a USB cable.",
+    "des1": "It allows to create protocols of a given installation and save them locally for later synchronisation with the server.",
+    "des2": "The app has a built-in guide that allows the user to familiarize themselves with its functionality.",
+    "des3": "The app has integration with a CI/CD system that automatically releases new versions of the app."
+  },
+  "cde": {
+    "main": "The application was created to simplify the process of programming and debugging telemetry devices.",
+    "des1": "It allows communication with the device through the console, sending commands and reading results.",
+    "des2": "However, the main use is reading device registers, directly through the register view, or through formatted fields with specific types and entering new values into them.",
+    "des3": "It communicates with the device using the Modbus protocol through a USB cable or network connection.    "
+  },
+  "present": "present",
+  "cv": "Resume"
 }

@@ -3,15 +3,15 @@ import { Dialog } from 'primereact/dialog';
 import { Galleria } from 'primereact/galleria';
 import { Image } from 'primereact/image';
 import { memo, useCallback, useMemo, useState } from 'react';
-import { RiCloseLine } from 'react-icons/ri';
+import { RiCloseLine, RiGithubFill } from 'react-icons/ri';
 
+import { GithubLink } from '@/components/githubLink';
 import { Trans } from '@/components/trans';
 import {
   Project,
   Technology,
   getProjectCardImage,
   getProjectImage,
-  getProjectVideo,
   getTechnologyIcon,
   getTechnologyLogo,
 } from '@/resources';
@@ -47,6 +47,7 @@ const ProjectsPage = memo(function ExperiencePage() {
                 title={projectDef.title}
                 date={projectDef.date}
                 technologies={projectDef.technologies}
+                githubLink={projectDef.githubLink}
                 image={getProjectCardImage(project)}
                 onClick={() => openDialog(project)}
                 isMobile={MobileProjects.includes(project)}
@@ -82,6 +83,7 @@ interface ProjectCardProps {
   image: string;
   onClick: () => void;
   isMobile: boolean;
+  githubLink?: string;
 }
 
 const ProjectCard = memo(function ProjectCard(props: ProjectCardProps) {
@@ -95,7 +97,21 @@ const ProjectCard = memo(function ProjectCard(props: ProjectCardProps) {
         <img className={`${styles.cardImage}`} src={props.image} />
         <span className={styles.cardDate}>{props.date}</span>
         <div className={styles.cardTitleContainer}>
-          <div className={styles.cardAdditionalInfo} />
+          <div className={styles.cardAdditionalInfo}>
+            {props.githubLink != null ? (
+              <a
+                className={styles.githubIcon}
+                onClick={(e) => e.stopPropagation()}
+                href={props.githubLink}
+              >
+                <Button
+                  style={{ width: '1.8rem', height: '1.8rem' }}
+                  className="p-button-rounded p-button-text"
+                  icon={<RiGithubFill size="1.6rem" />}
+                />
+              </a>
+            ) : null}
+          </div>
           <span className={styles.cardTitle}>{props.title}</span>
           <span className={styles.cardAdditionalInfo}>
             {props.technologies.map((technology) => {
@@ -210,7 +226,19 @@ const ProjectDialog = memo(function ProjectDialog(props: ProjectDialogProps) {
         showThumbnails={false}
         showIndicators
       />
-      <div className={styles.cardMainTitle}>{props.projectDef.title}</div>
+      <div className={styles.cardMainTitle}>
+        <div>{props.projectDef.title}</div>
+        <div className={styles.cardMainTitleIconContainer}>
+          {props.projectDef.githubLink != null ? (
+            <a className={styles.githubIcon} href={props.projectDef.githubLink}>
+              <Button
+                className="p-button-rounded p-button-text"
+                icon={<RiGithubFill size="2rem" />}
+              />
+            </a>
+          ) : null}
+        </div>
+      </div>
       <div className={styles.cardMainDescription}>
         <span>
           {Array.isArray(props.projectDef.description) ? (

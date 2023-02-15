@@ -80,6 +80,10 @@ export function getTechnologyIcon(technology: Technology): IconType {
     case Technology.redux:
       return SiRedux;
 
+    case Technology.qt:
+      return (args: any) => {
+        return <img {...args} src={getTechnologyLogo(technology)} />;
+      };
     case Technology.reduxSaga:
       return SiReduxsaga;
 

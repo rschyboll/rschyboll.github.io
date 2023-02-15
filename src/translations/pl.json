@@ -23,14 +23,22 @@
     "des3": "Serwis potrafi zarządzać wieloma maszynami renderującymi o różnych wydajnościach, poprzez testowanie ich mocy obliczeniowej, co później jest użyte przy procesie rozdzielania zadań."
   },
   "bconf": {
-    "main": "Jest to aplikacja na urządzenia mobilne której celem jest wspomaganie w procesie instalacji oraz konfiguracji urządzeń, które są podłączane do telefonu po kablu USB.",
-    "des1": "Pozwala ona na wykonanie protokołu danej instalacji, zapisanie ich lokalnie na telefonie, w celu późniejszej synchronizacji z serwerem.",
-    "des2": "W aplikacji wbudowany był poradnik, który pozwalał użytkownikowi na zaznajomienie się z jej funkcjonalnością."
+    "main": "Jest to aplikacja na urządzenia mobilne, której celem jest wspomaganie w procesie instalacji oraz konfiguracji urządzeń telemetrycznych, które są podłączane do telefonu po kablu USB.",
+    "des1": "Pozwala ona na wykonanie protokołu danej instalacji oraz zapisanie ich lokalnie w celu późniejszej synchronizacji z serwerem.",
+    "des2": "W aplikacji wbudowany jest poradnik, który pozwala użytkownikowi na zaznajomienie się z jej funkcjonalnością.",
+    "des3": "Aplikacja posiada integrację z systemem CI/CD który automatycznie udostępnia jej nowe wersje."
+  },
+  "cde": {
+    "main": "Aplikacja powstała aby ułatwić proces programowania i debugowania urządzeń telemetrycznych.",
+    "des1": "Umożliwia ona komunikację z urządzeniem poprzez konsolę, wysyłanie komend i odczytywanie rezultatów.",
+    "des2": "Głównym zastosowaniem jednak jest odczyt rejestrów urządzenia, bezpośrednio przez widok rejestrów, lub poprzez sformatowane pola o konkretnych typach i wprowadzanie do nich nowych wartości.",
+    "des3": "Komunikuje się ona z urządzeniem przy użyciu protokołu Modbus przez kabel USB lub połączenie sieciowe."
   },
   "education": {
     "university": "Politechnika Opolska",
     "university1": "Informatyka - stopień 2",
     "university2": "Informatyka - stopień 1"
   },
-  "present": "obecnie"
+  "present": "obecnie",
+  "cv": "CV"
 }

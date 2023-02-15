@@ -1,5 +1,5 @@
 import preact from '@preact/preset-vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { URL, fileURLToPath } from 'url';
 import { defineConfig, loadEnv } from 'vite';

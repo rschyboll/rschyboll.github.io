@@ -30,7 +30,7 @@ export const ExperienceModel = [
   {
     title: 'Junior python developer',
     subTitle: 'Control Sp. z o.o.',
-    date: '2019 - 2020',
+    date: '2018 - 2020',
     technologies: [Technology.python, Technology.qt, Technology.pySerial],
     icon: getTechnologyIcon(Technology.python),
   },
@@ -48,7 +48,7 @@ export const EducationModel = [
   {
     title: 'education.university2',
     subTitle: 'education.university',
-    date: '2019 - 2022',
+    date: '2018 - 2022',
     technologies: [
       Technology.python,
       Technology.cAndPlus,

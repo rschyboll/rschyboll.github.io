@@ -18,44 +18,10 @@ export interface ProjectDef {
     isMobile?: boolean;
     isVideo?: boolean;
   }[];
+  githubLink?: string;
 }
 
 export const ProjectsModel: Record<Project, ProjectDef> = {
-  [Project.BCONF]: {
-    title: 'BCONF',
-    date: '2021',
-    technologies: [Technology.dart, Technology.flutter],
-    description: 'bconf.main',
-    isMobile: true,
-    additionalTechnologies: [Technology.redux],
-    imagesAndDescriptions: [
-      {
-        image: getProjectImage(Project.BCONF, 1),
-        description: 'bconf.des1',
-        isVideo: false,
-        isMobile: true,
-      },
-      {
-        image: getProjectVideo(Project.BCONF, 1),
-        description: 'bconf.des2',
-        isVideo: true,
-        isMobile: true,
-      },
-      {
-        image: getProjectImage(Project.BCONF, 2),
-        description: 'bconf.des1',
-        isVideo: false,
-        isMobile: true,
-      },
-    ],
-  },
-  [Project.CDE]: {
-    title: 'CDE',
-    date: '2021',
-    technologies: [Technology.python, Technology.qt],
-    description: '',
-    imagesAndDescriptions: [],
-  },
   [Project.OCS]: {
     title: 'OCS',
     date: '2021',
@@ -117,6 +83,58 @@ export const ProjectsModel: Record<Project, ProjectDef> = {
       {
         image: getProjectImage(Project.BITRENDER, 1),
         description: 'bitrender.des3',
+      },
+    ],
+    githubLink: 'https://github.com/rschyboll/blender-rendering-server',
+  },
+  [Project.BCONF]: {
+    title: 'BCONF',
+    date: '2020',
+    technologies: [Technology.dart, Technology.flutter],
+    description: 'bconf.main',
+    isMobile: true,
+    additionalTechnologies: [Technology.redux],
+    imagesAndDescriptions: [
+      {
+        image: getProjectImage(Project.BCONF, 1),
+        description: 'bconf.des1',
+        isVideo: false,
+        isMobile: true,
+      },
+      {
+        image: getProjectVideo(Project.BCONF, 1),
+        description: 'bconf.des2',
+        isVideo: true,
+        isMobile: true,
+      },
+      {
+        image: getProjectImage(Project.BCONF, 2),
+        description: 'bconf.des3',
+        isVideo: false,
+        isMobile: true,
+      },
+    ],
+  },
+  [Project.CDE]: {
+    title: 'CDE',
+    date: '2018',
+    technologies: [Technology.python, Technology.qt],
+    description: 'cde.main',
+    imagesAndDescriptions: [
+      {
+        image: getProjectImage(Project.CDE, 1),
+        description: 'cde.des1',
+        isVideo: false,
+      },
+      {
+        image: getProjectImage(Project.CDE, 2),
+        description: 'cde.des2',
+        isVideo: false,
+      },
+      {
+        image: getProjectImage(Project.CDE, 3),
+        description: 'cde.des3',
+        isVideo: false,
       },
     ],
   },
