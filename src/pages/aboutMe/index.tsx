@@ -1,4 +1,6 @@
 import { memo } from 'react';
+import { RiMailFill } from 'react-icons/ri';
+import { SiLinkedin } from 'react-icons/si';
 
 import { Card } from '@/components/card';
 import { Trans } from '@/components/trans';
@@ -21,6 +23,18 @@ const AboutMePage = memo(function ExperiencePage() {
           </p>
 
           <Trans>aboutMe</Trans>
+
+          <a
+            href="https://linkedin.com/in/robin-schyboll"
+            className={styles.link}
+          >
+            <SiLinkedin className={styles.icon} />
+            https://linkedin.com/in/robin-schyboll
+          </a>
+          <div className={styles.link}>
+            <RiMailFill className={styles.icon} />
+            robin.schyboll@gmail.com
+          </div>
         </Card>
       </div>
     </div>

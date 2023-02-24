@@ -42,7 +42,7 @@
   background-color: var(--card-background);
   .portrait {
     height: 250px;
-    width: calc(250px * calc(2 / 3));
+    width: calc(250px * calc(3 / 4));
   }
 }
 
@@ -57,5 +57,18 @@
     width: 90vw;
     overflow: hidden;
     margin-top: 5rem;
+  }
+}
+
+.link {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--text-color);
+
+  .icon {
+    margin-right: 0.5rem;
   }
 }
