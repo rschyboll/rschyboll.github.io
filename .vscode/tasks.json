@@ -34,16 +34,5 @@
         }
       }
     },
-    {
-      "label": "$(extensions-info-message) ESLint",
-      "type": "shell",
-      "command": "yarn run eslint ./src --ext .ts,.tsx",
-      "options": {
-        "cwd": "${workspaceFolder}",
-        "statusbar": {
-          "color": "#fffaad"
-        }
-      }
-    }
   ]
 }
