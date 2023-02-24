@@ -1,5 +1,19 @@
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "typescript.tsdk": "./node_modules/typescript/lib"
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"typescript.tsdk": ".yarn/sdks/typescript/lib",
+	"search.exclude": {
+		"**/.yarn": true,
+		"**/.pnp.*": true
+	},
+	"files.exclude": {
+		".parcel-cache": true,
+		".yarn": true,
+		"node_modules": true,
+		".pnp*": true,
+		"yarn.lock": true
+	},
+	"eslint.nodePath": ".yarn/sdks",
+	"prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+	"typescript.enablePromptUseWorkspaceTsdk": true
 }
