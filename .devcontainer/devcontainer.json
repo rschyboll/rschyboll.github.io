@@ -1,35 +1,29 @@
 {
-  "name": "rschyboll.github.io",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
-  "postCreateCommand": "yarn install",
-  "waitFor": "postCreateCommand",
-  "remoteUser": "node",
-  "settings": {
-    "terminal.integrated.profiles.linux": {
-      "fish": {
-        "path": "/usr/bin/fish"
-      }
-    },
-    "terminal.integrated.defaultProfile.linux": "fish"
-  },
-  "forwardPorts": [4173, 5173],
-  "extensions": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "anweber.vscode-httpyac",
-    "anweber.httpbook",
-    "peterj.proto",
-    "actboy168.tasks",
-    "mhutchie.git-graph",
-    "steoates.autoimport",
-    "formulahendry.auto-rename-tag",
-    "dsznajder.es7-react-js-snippets",
-    "usernamehw.errorlens",
-    "adpyke.codesnap",
-    "wix.glean",
-    "arcanis.vscode-zipfs",
-    "macabeus.vscode-fluent"
-  ]
+	"name": "rschyboll.github.io",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"postCreateCommand": "pnpm install",
+	"waitFor": "postCreateCommand",
+	"remoteUser": "node",
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"fish": {
+				"path": "/usr/bin/fish"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "fish"
+	},
+	"forwardPorts": [4173, 5173],
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"actboy168.tasks",
+		"mhutchie.git-graph",
+		"steoates.autoimport",
+		"formulahendry.auto-rename-tag",
+		"usernamehw.errorlens",
+		"adpyke.codesnap",
+		"svelte.svelte-vscode"
+	]
 }

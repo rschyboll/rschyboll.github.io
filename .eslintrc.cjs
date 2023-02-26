@@ -1,20 +1,47 @@
 module.exports = {
-	root: true,
 	parser: '@typescript-eslint/parser',
-	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-	plugins: ['svelte3', '@typescript-eslint'],
-	ignorePatterns: ['*.cjs'],
-	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
-	settings: {
-		'svelte3/typescript': () => require('typescript')
-	},
 	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 2020
+		project: './tsconfig.json',
+		extraFileExtensions: ['.svelte']
 	},
-	env: {
-		browser: true,
-		es2017: true,
-		node: true
+	plugins: ['import'],
+	extends: [
+		'eslint:recommended',
+		'plugin:svelte/recommended',
+		'plugin:svelte/prettier',
+		'plugin:import/recommended',
+		'plugin:import/typescript'
+	],
+	overrides: [
+		{
+			files: ['*.svelte'],
+			parser: 'svelte-eslint-parser',
+			parserOptions: {
+				parser: '@typescript-eslint/parser'
+			}
+		}
+	],
+	settings: {
+		'import/resolver': {
+			typescript: true,
+			node: true
+		},
+		'import/parsers': {
+			'@typescript-eslint/parser': ['.ts', '.tsx'],
+			'svelte-eslint-parser': ['.svelte']
+		}
+	},
+	ignorePatterns: ['*.cjs'],
+	rules: {
+		'import/no-unresolved': 'error',
+		'import/order': [
+			'error',
+			{
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: true
+				}
+			}
+		]
 	}
 };
