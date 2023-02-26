@@ -33,7 +33,7 @@ const AboutMePage = memo(function ExperiencePage() {
           </a>
           <div className={styles.link}>
             <RiMailFill className={styles.icon} />
-            robin.schyboll@gmail.com
+            rschyboll@gmail.com
           </div>
         </Card>
       </div>
