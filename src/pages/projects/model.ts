@@ -58,7 +58,7 @@ export const ProjectsModel: Record<Project, ProjectDef> = {
   },
   [Project.BITRENDER]: {
     title: 'BITRENDER',
-    date: '2021',
+    date: '2020',
     technologies: [
       Technology.typescript,
       Technology.python,
