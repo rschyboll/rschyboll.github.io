@@ -81,7 +81,7 @@ export const ProjectsModel: Record<Project, ProjectDef> = {
         description: 'bitrender.des1',
       },
       {
-        image: getProjectImage(Project.BITRENDER, 1),
+        image: getProjectImage(Project.BITRENDER, 3),
         description: 'bitrender.des3',
       },
     ],

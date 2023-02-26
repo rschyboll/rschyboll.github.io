@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /opt/yarn-v1.22.19/bin/yarn.js add --dev prefresh
+  /usr/local/bin/node /opt/yarn-v1.22.19/bin/yarn.js install
 
 PATH: 
   /vscode/vscode-server/bin/linux-x64/97dec172d3256f8ca4bfb2143f3f76b503ca0534/bin/remote-cli:/usr/local/share/nvm/current/bin:/usr/local/share/npm-global/bin:/usr/local/share/nvm/current/bin:/usr/local/share/npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/node/.local/bin
@@ -8,23 +8,13 @@ Yarn version:
   1.22.19
 
 Node version: 
-  16.19.0
+  18.14.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/prefresh: Not found
-      at Request.params.callback [as _callback] (/opt/yarn-v1.22.19/lib/cli.js:66145:18)
-      at Request.self.callback (/opt/yarn-v1.22.19/lib/cli.js:140890:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (/opt/yarn-v1.22.19/lib/cli.js:141862:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (/opt/yarn-v1.22.19/lib/cli.js:141784:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1358:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: ENOENT: no such file or directory, copyfile '/home/node/.cache/yarn/v6/npm-globals-13.15.0-38113218c907d2f7e98658af246cef8b77e90bac-integrity/node_modules/globals/globals.json' -> '/workspace/node_modules/@eslint/eslintrc/node_modules/globals/globals.json'
 
 npm manifest: 
   {
@@ -37,7 +27,7 @@ npm manifest:
       "@types/react-vertical-timeline-component": "^3.3.3",
       "@typescript-eslint/eslint-plugin": "^5.31.0",
       "@typescript-eslint/parser": "^5.31.0",
-      "@vitejs/plugin-react": "^3.0.0",
+      "@vitejs/plugin-react-swc": "^3.1.0",
       "eslint": "^8.20.0",
       "eslint-config-prettier": "^8.5.0",
       "eslint-plugin-prettier": "^4.2.1",
@@ -61,6 +51,8 @@ npm manifest:
       "preact": "^10.11.3",
       "primeicons": "^6.0.1",
       "primereact": "^8.7.3",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
       "react-i18next": "^11.18.1",
       "react-icons": "^4.4.0",
       "react-toggle-dark-mode": "^1.1.1",
@@ -155,27 +147,6 @@ Lockfile:
       debug "^4.1.0"
       gensync "^1.0.0-beta.2"
       json5 "^2.1.2"
-      semver "^6.3.0"
-  
-  "@babel/core@^7.20.5":
-    version "7.20.7"
-    resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.20.7.tgz#37072f951bd4d28315445f66e0ec9f6ae0c8c35f"
-    integrity sha512-t1ZjCluspe5DW24bn2Rr1CDb2v9rn/hROtg9a2tmd0+QYf4bsloYfLQzjG4qHPNMhWtKdGC33R5AxGR2Af2cBw==
-    dependencies:
-      "@ampproject/remapping" "^2.1.0"
-      "@babel/code-frame" "^7.18.6"
-      "@babel/generator" "^7.20.7"
-      "@babel/helper-compilation-targets" "^7.20.7"
-      "@babel/helper-module-transforms" "^7.20.7"
-      "@babel/helpers" "^7.20.7"
-      "@babel/parser" "^7.20.7"
-      "@babel/template" "^7.20.7"
-      "@babel/traverse" "^7.20.7"
-      "@babel/types" "^7.20.7"
-      convert-source-map "^1.7.0"
-      debug "^4.1.0"
-      gensync "^1.0.0-beta.2"
-      json5 "^2.2.1"
       semver "^6.3.0"
   
   "@babel/core@^7.9.6":
@@ -303,7 +274,7 @@ Lockfile:
       "@babel/traverse" "^7.18.9"
       "@babel/types" "^7.18.9"
   
-  "@babel/helper-module-transforms@^7.20.11", "@babel/helper-module-transforms@^7.20.7":
+  "@babel/helper-module-transforms@^7.20.11":
     version "7.20.11"
     resolved "https://registry.yarnpkg.com/@babel/helper-module-transforms/-/helper-module-transforms-7.20.11.tgz#df4c7af713c557938c50ea3ad0117a7944b2f1b0"
     integrity sha512-uRy78kN4psmji1s2QtbtcCSaj/LILFDp0f/ymhpQH5QY3nljUZCaNWz9X1dEj/8MBdBEFECs7yRhKn8i7NjZgg==
@@ -317,7 +288,7 @@ Lockfile:
       "@babel/traverse" "^7.20.10"
       "@babel/types" "^7.20.7"
   
-  "@babel/helper-plugin-utils@^7.18.6", "@babel/helper-plugin-utils@^7.19.0", "@babel/helper-plugin-utils@^7.20.2":
+  "@babel/helper-plugin-utils@^7.18.6", "@babel/helper-plugin-utils@^7.20.2":
     version "7.20.2"
     resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.20.2.tgz#d1b9000752b18d0877cff85a5c376ce5c3121629"
     integrity sha512-8RvlJG2mj4huQ4pZ+rU9lqKi9ZKiRmuvGuM2HlWmkmgOhbs6zEAw6IEiJ5cQqGbDzGZOhwuOQNtZMi/ENLjZoQ==
@@ -423,20 +394,6 @@ Lockfile:
     integrity sha512-SA6HEjwYFKF7WDjWcMcMGUimmw/nhNRDWxr+KaLSCrkD/LMDBvWRmHAYgE1HDeF8KUuI8OAu+RT6EOtKxSW2qA==
     dependencies:
       "@babel/plugin-transform-react-jsx" "^7.18.6"
-  
-  "@babel/plugin-transform-react-jsx-self@^7.18.6":
-    version "7.18.6"
-    resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.18.6.tgz#3849401bab7ae8ffa1e3e5687c94a753fc75bda7"
-    integrity sha512-A0LQGx4+4Jv7u/tWzoJF7alZwnBDQd6cGLh9P+Ttk4dpiL+J5p7NSNv/9tlEFFJDq3kjxOavWmbm6t0Gk+A3Ig==
-    dependencies:
-      "@babel/helper-plugin-utils" "^7.18.6"
-  
-  "@babel/plugin-transform-react-jsx-source@^7.19.6":
-    version "7.19.6"
-    resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.19.6.tgz#88578ae8331e5887e8ce28e4c9dc83fb29da0b86"
-    integrity sha512-RpAi004QyMNisst/pvSanoRdJ4q+jMCWyk9zdw/CyLB9j8RXEahodR6l2GyttDRyEVWZtbN+TpLiHJ3t34LbsQ==
-    dependencies:
-      "@babel/helper-plugin-utils" "^7.19.0"
   
   "@babel/plugin-transform-react-jsx@^7.14.9", "@babel/plugin-transform-react-jsx@^7.18.6":
     version "7.20.7"
@@ -751,11 +708,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.13.tgz#b6461fb0c2964356c469e115f504c95ad97ab88c"
     integrity sha512-GryiOJmNcWbovBxTfZSF71V/mXbgcV3MewDe3kIMCLyIh5e7SKAeUZs+rMnJ8jkMolZ/4/VsdBmMrw3l+VdZ3w==
   
-  "@jridgewell/sourcemap-codec@^1.4.13":
-    version "1.4.14"
-    resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.14.tgz#add4c98d341472a289190b424efbdb096991bb24"
-    integrity sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==
-  
   "@jridgewell/trace-mapping@^0.3.9":
     version "0.3.13"
     resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.13.tgz#dcfe3e95f224c8fe97a87a5235defec999aa92ea"
@@ -919,6 +871,72 @@ Lockfile:
       estree-walker "^2.0.1"
       picomatch "^2.2.2"
   
+  "@swc/core-darwin-arm64@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.32.tgz#841b0a244c2c75e67bb9d3cb665b2ede601e4e3a"
+    integrity sha512-o19bhlxuUgjUElm6i+QhXgZ0vD6BebiB/gQpK3en5aAwhOvinwr4sah3GqFXsQzz/prKVDuMkj9SW6F/Ug5hgg==
+  
+  "@swc/core-darwin-x64@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-darwin-x64/-/core-darwin-x64-1.3.32.tgz#125247c6a5d7189776a6973b0a539a07576d5585"
+    integrity sha512-hVEGd+v5Afh+YekGADOGKwhuS4/AXk91nLuk7pmhWkk8ceQ1cfmah90kXjIXUlCe2G172MLRfHNWlZxr29E/Og==
+  
+  "@swc/core-linux-arm-gnueabihf@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.3.32.tgz#d8ba8da3707b91e62059e65e375fc6093c4d5f82"
+    integrity sha512-5X01WqI9EbJ69oHAOGlI08YqvEIXMfT/mCJ1UWDQBb21xWRE2W1yFAAeuqOLtiagLrXjPv/UKQ0S2gyWQR5AXQ==
+  
+  "@swc/core-linux-arm64-gnu@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.3.32.tgz#15973e533c45e2976e57c590613e3e5dca0e62ad"
+    integrity sha512-PTJ6oPiutkNBg+m22bUUPa4tNuMmsgpSnsnv2wnWVOgK0lhvQT6bAPTUXDq/8peVAgR/SlpP2Ht8TRRqYMRjRQ==
+  
+  "@swc/core-linux-arm64-musl@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.3.32.tgz#0e20f30885c8588bd13e7e5628ce8bdbe6cb44b6"
+    integrity sha512-lG0VOuYNPWOCJ99Aza69cTljjeft/wuRQeYFF8d+1xCQS/OT7gnbgi7BOz39uSHIPTBqfzdIsuvzdKlp9QydrQ==
+  
+  "@swc/core-linux-x64-gnu@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.3.32.tgz#2ea5e17d13a70e6a13742282cf30e92e4074f4c5"
+    integrity sha512-ecqtSWX4NBrs7Ji2VX3fDWeqUfrbLlYqBuufAziCM27xMxwlAVgmyGQk4FYgoQ3SAUAu3XFH87+3Q7uWm2X7xg==
+  
+  "@swc/core-linux-x64-musl@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.3.32.tgz#d96cde03d54f13f77dd1d6602a049bd2baaef446"
+    integrity sha512-rl3dMcUuENVkpk5NGW/LXovjK0+JFm4GWPjy4NM3Q5cPvhBpGwSeLZlR+zAw9K0fdGoIXiayRTTfENrQwwsH+g==
+  
+  "@swc/core-win32-arm64-msvc@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.3.32.tgz#3870113492cc3d2679945372f4975ce7f60594cc"
+    integrity sha512-VlybAZp8DcS66CH1LDnfp9zdwbPlnGXREtHDMHaBfK9+80AWVTg+zn0tCYz+HfcrRONqxbudwOUIPj+dwl/8jw==
+  
+  "@swc/core-win32-ia32-msvc@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.3.32.tgz#643519663778e64941c8b730197d4ba762dffcb0"
+    integrity sha512-MEUMdpUFIQ+RD+K/iHhHKfu0TFNj9VXwIxT5hmPeqyboKo095CoFEFBJ0sHG04IGlnu8T9i+uE2Pi18qUEbFug==
+  
+  "@swc/core-win32-x64-msvc@1.3.32":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.32.tgz#aa9595cb93d9dd5bbc7e5cfdabd8bb086ea6c21d"
+    integrity sha512-DPMoneNFQco7SqmVVOUv1Vn53YmoImEfrAPMY9KrqQzgfzqNTuL2JvfxUqfAxwQ6pEKYAdyKJvZ483rIhgG9XQ==
+  
+  "@swc/core@^1.3.30":
+    version "1.3.32"
+    resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.3.32.tgz#ecb3c9d7717e0a15796230def1b17968b18228f1"
+    integrity sha512-Yx/n1j+uUkcqlJAW8IRg8Qymgkdow6NHJZPFShiR0YiaYq2sXY+JHmvh16O6GkL91Y+gTlDUS7uVgDz50czJUQ==
+    optionalDependencies:
+      "@swc/core-darwin-arm64" "1.3.32"
+      "@swc/core-darwin-x64" "1.3.32"
+      "@swc/core-linux-arm-gnueabihf" "1.3.32"
+      "@swc/core-linux-arm64-gnu" "1.3.32"
+      "@swc/core-linux-arm64-musl" "1.3.32"
+      "@swc/core-linux-x64-gnu" "1.3.32"
+      "@swc/core-linux-x64-musl" "1.3.32"
+      "@swc/core-win32-arm64-msvc" "1.3.32"
+      "@swc/core-win32-ia32-msvc" "1.3.32"
+      "@swc/core-win32-x64-msvc" "1.3.32"
+  
   "@trivago/prettier-plugin-sort-imports@^3.3.0":
     version "3.3.0"
     resolved "https://registry.yarnpkg.com/@trivago/prettier-plugin-sort-imports/-/prettier-plugin-sort-imports-3.3.0.tgz#ee4e9ec1d8e3076b95fcb94311f42f7a61eecd37"
@@ -1066,16 +1084,12 @@ Lockfile:
       "@typescript-eslint/types" "5.31.0"
       eslint-visitor-keys "^3.3.0"
   
-  "@vitejs/plugin-react@^3.0.0":
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-3.0.0.tgz#f36ee1b2ce958dd11ac63fdf746a3b27b0d258ed"
-    integrity sha512-1mvyPc0xYW5G8CHQvJIJXLoMjl5Ct3q2g5Y2s6Ccfgwm45y48LBvsla7az+GkkAtYikWQ4Lxqcsq5RHLcZgtNQ==
+  "@vitejs/plugin-react-swc@^3.1.0":
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/@vitejs/plugin-react-swc/-/plugin-react-swc-3.1.0.tgz#bbf503223b496ee148c231948ff35ebb339bf225"
+    integrity sha512-xnDULNrkEbtTtRNnMPp+RsuIuIbk1JJV0xY7irchYyv9JJS4uvmc1EYip+qyrnkcX7TQ9c8vCS3AmkQqADI0Fw==
     dependencies:
-      "@babel/core" "^7.20.5"
-      "@babel/plugin-transform-react-jsx-self" "^7.18.6"
-      "@babel/plugin-transform-react-jsx-source" "^7.19.6"
-      magic-string "^0.27.0"
-      react-refresh "^0.14.0"
+      "@swc/core" "^1.3.30"
   
   acorn-jsx@^5.3.2:
     version "5.3.2"
@@ -2391,7 +2405,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
     integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
   
-  json5@^2.2.1, json5@^2.2.2:
+  json5@^2.2.2:
     version "2.2.3"
     resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
     integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
@@ -2478,7 +2492,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
     integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
   
-  loose-envify@^1.4.0:
+  loose-envify@^1.1.0, loose-envify@^1.4.0:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
     integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -2498,13 +2512,6 @@ Lockfile:
     integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
     dependencies:
       yallist "^4.0.0"
-  
-  magic-string@^0.27.0:
-    version "0.27.0"
-    resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.27.0.tgz#e4a3413b4bab6d98d2becffd48b4a257effdbbf3"
-    integrity sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==
-    dependencies:
-      "@jridgewell/sourcemap-codec" "^1.4.13"
   
   make-dir@^2.1.0:
     version "2.1.0"
@@ -2968,6 +2975,14 @@ Lockfile:
       minimist "^1.2.0"
       strip-json-comments "~2.0.1"
   
+  react-dom@^18.2.0:
+    version "18.2.0"
+    resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
+    integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
+    dependencies:
+      loose-envify "^1.1.0"
+      scheduler "^0.23.0"
+  
   react-i18next@^11.18.1:
     version "11.18.1"
     resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.18.1.tgz#ba86ed09069e129b8623a28f2b9a03d7f105ea6f"
@@ -2990,11 +3005,6 @@ Lockfile:
     version "16.13.1"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-  
-  react-refresh@^0.14.0:
-    version "0.14.0"
-    resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
-    integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
   
   react-spring@^9.0.0-rc.3:
     version "9.6.1"
@@ -3033,6 +3043,13 @@ Lockfile:
       classnames "^2.2.6"
       prop-types "^15.7.2"
       react-intersection-observer "^8.26.2"
+  
+  react@^18.2.0:
+    version "18.2.0"
+    resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
+    integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
+    dependencies:
+      loose-envify "^1.1.0"
   
   readable-stream@^3.1.1, readable-stream@^3.4.0:
     version "3.6.0"
@@ -3171,6 +3188,13 @@ Lockfile:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
     integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
+  
+  scheduler@^0.23.0:
+    version "0.23.0"
+    resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.0.tgz#ba8041afc3d30eb206a487b6b384002e4e61fdfe"
+    integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
+    dependencies:
+      loose-envify "^1.1.0"
   
   semver@^5.6.0:
     version "5.7.1"
