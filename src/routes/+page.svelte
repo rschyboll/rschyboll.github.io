@@ -1,7 +1,6 @@
 <script>
-	import { zest } from './zest';
-
 	import { test } from './test';
+	import { zest } from './zest';
 </script>
 
 <h1>Welcome to SvelteKit</h1>

@@ -1,12 +1,13 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
 	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode"
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
 	"eslint.enable": true,
+	"eslint.format.enable": true,
 	"eslint.validate": ["typescript", "svelte"],
 	"eslint.codeActionsOnSave.mode": "all",
-	"eslint.codeActionsOnSave.rules": ["import/order"],
+	"eslint.codeActionsOnSave.rules": ["import/order", "prettier/prettier"],
 	"eslint.useESLintClass": true
 }

@@ -10,7 +10,8 @@ module.exports = {
 		'plugin:svelte/recommended',
 		'plugin:svelte/prettier',
 		'plugin:import/recommended',
-		'plugin:import/typescript'
+		'plugin:import/typescript',
+		'plugin:prettier/recommended'
 	],
 	overrides: [
 		{
