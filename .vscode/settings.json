@@ -9,5 +9,11 @@
 	"eslint.validate": ["typescript", "svelte"],
 	"eslint.codeActionsOnSave.mode": "all",
 	"eslint.codeActionsOnSave.rules": ["import/order", "prettier/prettier"],
-	"eslint.useESLintClass": true
+	"eslint.useESLintClass": true,
+	"files.exclude": {
+		"node_modules": true,
+		".svelte-kit": true,
+		".pnpm-store": true,
+		"dist": true
+	}
 }
