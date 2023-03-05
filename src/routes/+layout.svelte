@@ -20,7 +20,7 @@
 <svelte:head>
 	<meta name="color-scheme" content={$theme == Theme.system ? 'dark light' : $theme} />
 	<link rel="stylesheet" href={`/themes/${$theme}.css`} />
-	//TODO add theme-color meta element
+	<!-- TODO add theme-color meta element -->
 </svelte:head>
 
 <menu class:expanded>
