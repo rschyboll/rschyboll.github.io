@@ -1,15 +1,14 @@
 <script>
-	import { test } from './test';
-	import { zest } from './zest';
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
+	import { Theme } from '$lib/enums';
+
+	let name = 'Svelte';
+	onMount(() => {
+		console.log(name);
+	});
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-{#if zest}
-	<div>foo</div>
-{:else if test}
-	<div>bar</div>
-{:else if test}
-	<div>baz</div>
+{#if false}
+	<div />
 {/if}

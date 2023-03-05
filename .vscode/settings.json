@@ -1,18 +1,25 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[typescript]": {
+		"editor.formatOnSave": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
 	"[svelte]": {
-		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+		"editor.formatOnSave": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
 	},
 	"eslint.enable": true,
-	"eslint.format.enable": true,
 	"eslint.validate": ["typescript", "svelte"],
-	"eslint.codeActionsOnSave.mode": "all",
 	"eslint.codeActionsOnSave.rules": ["import/order", "prettier/prettier"],
 	"eslint.useESLintClass": true,
 	"files.exclude": {
-		"node_modules": true,
-		".svelte-kit": true,
+		"node_modules": false,
+		".svelte-kit": false,
 		".pnpm-store": true,
 		"dist": true
 	}

@@ -7,6 +7,8 @@ module.exports = {
 	plugins: ['import'],
 	extends: [
 		'eslint:recommended',
+		'prettier',
+		'plugin:@typescript-eslint/recommended',
 		'plugin:svelte/recommended',
 		'plugin:svelte/prettier',
 		'plugin:import/recommended',
@@ -24,8 +26,9 @@ module.exports = {
 	],
 	settings: {
 		'import/resolver': {
-			typescript: true,
-			node: true
+			typescript: {
+				project: ['./tsconfig.json', './.svelte-kit/tsconfig.json']
+			}
 		},
 		'import/parsers': {
 			'@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -34,6 +37,13 @@ module.exports = {
 	},
 	ignorePatterns: ['*.cjs'],
 	rules: {
+		'prettier/prettier': [
+			'warn',
+			{},
+			{
+				usePrettierrc: true
+			}
+		],
 		'import/no-unresolved': 'error',
 		'import/order': [
 			'error',
