@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Navbar } from '$components';
+
 	import { Theme } from '$lib/enums';
 	import { theme } from '$lib/stores';
 
@@ -20,16 +22,12 @@
 <svelte:head>
 	<meta name="color-scheme" content={$theme == Theme.system ? 'dark light' : $theme} />
 	<link rel="stylesheet" href={`/themes/${$theme}.css`} />
-	<!-- TODO add theme-color meta element -->
+	<meta name="theme-color" content="var(--theme-color)" />
 </svelte:head>
 
-<menu class:expanded>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/settings">Settings</a>
-	</nav>
-</menu>
+<header>
+	<Navbar pages={['/about', '/projects']} />
+</header>
 
 <div class="page">
 	<slot />
@@ -39,14 +37,9 @@
 </div>
 
 <style>
-	menu {
-		position: fixed;
-		display: flex;
-		height: 100vh;
-		width: 15rem;
-		margin: 0;
-		padding: 0;
-		background-color: var(--color-lightest);
+	header {
+		width: 100vw;
+		padding: 50px 0px;
 	}
 
 	.page {

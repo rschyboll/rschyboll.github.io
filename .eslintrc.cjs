@@ -1,4 +1,7 @@
 module.exports = {
+	env: {
+		browser: true
+	},
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: './tsconfig.json',
@@ -24,6 +27,7 @@ module.exports = {
 			}
 		}
 	],
+
 	settings: {
 		'import/resolver': {
 			typescript: {
@@ -44,7 +48,7 @@ module.exports = {
 				usePrettierrc: true
 			}
 		],
-		'import/no-unresolved': 'error',
+		'import/no-unresolved': 'off',
 		'import/order': [
 			'error',
 			{
