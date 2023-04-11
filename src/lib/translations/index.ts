@@ -9,8 +9,19 @@ function globImportToConfig(glob: Record<string, () => Promise<any>>) {
 	return Object.entries(glob).map(([key, loader]) => {
 		const splitPath = key.split('/');
 
+		if (splitPath[2] == 'routes') {
+			splitPath.splice(2, 1);
+		}
+
 		const locale = splitPath[1];
-		const path = '/' + splitPath.slice(2, splitPath.length).join('/').split('.')[0];
+		const path = `/${locale}` + '/' + splitPath.slice(2, splitPath.length).join('/').split('.')[0];
+		if (splitPath[2] == 'common.json') {
+			return {
+				locale: locale,
+				key: key,
+				loader: async () => (await loader()).default
+			};
+		}
 
 		return {
 			locale: locale,

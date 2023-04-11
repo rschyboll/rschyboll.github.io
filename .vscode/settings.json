@@ -14,13 +14,19 @@
 		}
 	},
 	"eslint.enable": true,
-	"eslint.validate": ["typescript", "svelte"],
-	"eslint.codeActionsOnSave.rules": ["import/order", "prettier/prettier"],
+	"eslint.validate": [
+		"typescript",
+		"svelte"
+	],
+	"eslint.codeActionsOnSave.rules": [
+		"import/order",
+		"prettier/prettier"
+	],
 	"eslint.useESLintClass": true,
 	"files.exclude": {
 		"node_modules": false,
 		".svelte-kit": false,
 		".pnpm-store": true,
-		"dist": true
+		"dist": false
 	}
 }

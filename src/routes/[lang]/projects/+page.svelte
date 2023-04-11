@@ -2,4 +2,6 @@
 	import { t } from '$lib/translations';
 </script>
 
-<div>{$t('test')}</div>
+HALLO
+<div>{$t('projects.test')}</div>
+HALLO2

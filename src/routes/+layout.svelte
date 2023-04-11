@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { locale } from '$lib/translations';
-
-	$: console.log($locale);
 </script>
 
 <slot />
